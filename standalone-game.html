@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Flappy Bird</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      background: #222;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .game-container {
+      width: 70vw;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      background: #70c5ce;
+      max-width: 800px;
+      min-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    /* تحسين الاستجابة للأجهزة المختلفة */
+    @media (max-width: 768px) {
+      .game-container {
+        width: 90vw;
+        height: 400px;
+        min-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .game-container {
+        width: 95vw;
+        height: 350px;
+        min-width: 280px;
+      }
+    }
+
+    .sky {
+      background: linear-gradient(to bottom, #87CEEB 0%, #98E4FF 100%);
+      width: 100%;
+      height: 420px;
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 0.3s ease;
+    }
+
+    /* تحسين الاستجابة للسماء */
+    @media (max-width: 768px) {
+      .sky {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sky {
+        height: 270px;
+      }
+    }
+
+    .bird {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 150px;
+      bottom: 250px;
+      background: #FFD700;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      border: 2px solid #FFA500;
+      transition: all 0.1s ease;
+      z-index: 10;
+    }
+
+    .bird::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #FF4500;
+      border-radius: 50%;
+      top: 12px;
+      left: 8px;
+    }
+
+    .bird::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 20px;
+      background: #FFD700;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      top: 5px;
+      left: 25px;
+      transform: rotate(-20deg);
+    }
+
+    /* تحسين الاستجابة للطائر */
+    @media (max-width: 480px) {
+      .bird {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .obstacle, .topObstacle {
+      width: 70px !important;
+      min-width: 70px !important;
+      max-width: 70px !important;
+      height: auto;
+      position: absolute;
+      background: #228B22;
+      border: 3px solid #006400;
+      border-radius: 8px;
+      box-sizing: border-box !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .topObstacle {
+      transform: rotate(180deg);
+    }
+
+    .ground {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      z-index: 2;
+      background: #8B4513;
+      border-top: 3px solid #654321;
+    }
+
+    .ground::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      background: #32CD32;
+      top: 0;
+      left: 0;
+    }
+
+    .ground.moving {
+      width: 200%;
+      animation: slideright 2s infinite linear;
+    }
+
+    @keyframes slideright {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .ground-container {
+      height: 80px;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .score-board {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      z-index: 10;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .score-board {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .score-board {
+        font-size: 18px;
+        padding: 6px 12px;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .overlay div {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .overlay button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 8px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .overlay button:hover {
+      background: #45a049;
+      transform: translateY(-2px);
+    }
+
+    .overlay button:active {
+      transform: translateY(0);
+    }
+
+    .best-score {
+      color: #ffd700;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .secondary-btn {
+      background: #666 !important;
+    }
+
+    .secondary-btn:hover {
+      background: #888 !important;
+    }
+
+    .settings-container {
+      margin: 20px 0;
+    }
+
+    .setting-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px 0;
+      color: white;
+      font-size: 16px;
+    }
+
+    .slider {
+      width: 100px;
+      margin-left: 15px;
+    }
+
+    .checkbox {
+      margin-left: 15px;
+      transform: scale(1.2);
+    }
+
+    #restartGameBtn {
+      width: 100% !important;
+      height: 300px !important;
+      font-size: 24px !important;
+      padding: 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-direction: column !important;
+    }
+
+    @media (max-width: 480px) {
+      #restartGameBtn {
+        height: 200px !important;
+        font-size: 20px !important;
+        padding: 15px !important;
+      }
+    }
+
+    .score-effect {
+      position: absolute;
+      color: #ffd700;
+      font-size: 24px;
+      font-weight: bold;
+      pointer-events: none;
+      z-index: 15;
+      animation: scorePop 0.6s ease-out forwards;
+    }
+
+    @keyframes scorePop {
+      0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-30px);
+      }
+    }
+
+    @keyframes wingFlap {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.8); }
+    }
+
+    .bird {
+      animation: wingFlap 0.3s ease-in-out infinite;
+    }
+
+    .bird.jumping {
+      animation: wingFlap 0.2s ease-in-out infinite, jumpRotate 0.1s ease-in-out;
+    }
+
+    @keyframes jumpRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-15deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <div class="score-board" id="score">Score: 0</div>
+    <div class="sky">
+      <div class="bird"></div>
+    </div>
+    <div class="ground-container">
+      <div class="ground"></div>
+    </div>
+
+    <!-- شاشة البداية -->
+    <div class="overlay" id="startScreen" role="dialog" aria-labelledby="game-title">
+      <div id="game-title">🐤 Flappy Bird</div>
+      <div id="bestScore" class="best-score" aria-live="polite">Best Score: 0</div>
+      <button id="startGameBtn" aria-describedby="game-title">ابدأ اللعبة</button>
+      <button id="settingsBtn" class="secondary-btn" aria-describedby="game-title">⚙️ إعدادات</button>
+    </div>
+
+    <!-- شاشة Game Over -->
+    <div class="overlay" id="gameOverScreen" style="display:none;" role="dialog" aria-labelledby="final-score">
+      <div id="finalScore" aria-live="assertive">Game Over 😢<br>Score: 0</div>
+      <button id="restartGameBtn" aria-describedby="final-score">🔄 إعادة اللعب</button>
+      <button id="mainMenuBtn" class="secondary-btn" aria-describedby="final-score">🏠 القائمة الرئيسية</button>
+    </div>
+
+    <!-- شاشة الإعدادات -->
+    <div class="overlay" id="settingsScreen" style="display:none;" role="dialog" aria-labelledby="settings-title">
+      <div id="settings-title">⚙️ الإعدادات</div>
+      <div class="settings-container">
+        <label class="setting-label" for="difficultySlider">
+          <input type="range" id="difficultySlider" min="1" max="3" value="2" class="slider" aria-label="مستوى الصعوبة">
+          الصعوبة: <span id="difficultyText" aria-live="polite">متوسطة</span>
+        </label>
+        <label class="setting-label" for="soundToggle">
+          <input type="checkbox" id="soundToggle" checked class="checkbox" aria-label="تشغيل الأصوات">
+          الأصوات
+        </label>
+        <label class="setting-label" for="effectsToggle">
+          <input type="checkbox" id="effectsToggle" checked class="checkbox" aria-label="التأثيرات البصرية">
+          التأثيرات البصرية
+        </label>
+      </div>
+      <button id="saveSettingsBtn" aria-describedby="settings-title">💾 حفظ</button>
+      <button id="backBtn" class="secondary-btn" aria-describedby="settings-title">🔙 رجوع</button>
+    </div>
+  </div>
+
+  <script>
+    // متغيرات اللعبة الأساسية
+    let bird, gameDisplay, ground, scoreBoard, startScreen, gameOverScreen, finalScore, settingsScreen, bestScoreDisplay
+    let birdLeft, birdBottom, gravity, isGameOver, gap, score, gameTimerId, gameSpeed
+
+    // إعدادات اللعبة
+    let gameSettings = {
+      difficulty: 2, // 1: سهل، 2: متوسط، 3: صعب
+      soundEnabled: true,
+      effectsEnabled: true
+    }
+
+    // تهيئة الأصوات مع AudioContext واحد
+    let gameSounds = {
+      audioContext: null,
+      init: function() {
+        if (gameSettings.soundEnabled) {
+          try {
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)()
+          } catch (error) {
+            console.warn('لا يمكن تهيئة الأصوات:', error)
+          }
+        }
+      },
+      createTone: function(frequency, duration, type) {
+        if (!this.audioContext) return
+        
+        const oscillator = this.audioContext.createOscillator()
+        const gainNode = this.audioContext.createGain()
+        
+        oscillator.connect(gainNode)
+        gainNode.connect(this.audioContext.destination)
+        
+        oscillator.frequency.value = frequency
+        oscillator.type = type
+        gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + duration)
+        
+        oscillator.start(this.audioContext.currentTime)
+        oscillator.stop(this.audioContext.currentTime + duration)
+      },
+      playJump: function() {
+        if (gameSettings.soundEnabled && this.audioContext) {
+          this.createTone(440, 0.1, 'sine')
+        }
+      },
+      playHit: function() {
+        if (gameSettings.soundEnabled && this.audioContext) {
+          this.createTone(200, 0.3, 'sawtooth')
+        }
+      },
+      playPoint: function() {
+        if (gameSettings.soundEnabled && this.audioContext) {
+          this.createTone(880, 0.15, 'square')
+        }
+      }
+    }
+
+    // مصفوفة العقبات النشطة
+    let activeObstacles = []
+    let generateObstacleTimeout = null
+
+    // تهيئة متغيرات اللعبة
+    function initGameVars() {
+      birdLeft = 150
+      birdBottom = 250
+      gravity = 0.6
+      isGameOver = false
+      score = 0
+      gameSpeed = 2
+      gap = 120
+      gameTimerId = null
+      activeObstacles = []
+      
+      // تطبيق إعدادات الصعوبة
+      switch(gameSettings.difficulty) {
+        case 1: // سهل
+          gap = 150
+          gameSpeed = 1.5
+          break
+        case 2: // متوسط
+          gap = 120
+          gameSpeed = 2
+          break
+        case 3: // صعب
+          gap = 100
+          gameSpeed = 2.5
+          break
+      }
+    }
+
+    // تهيئة DOM
+    document.addEventListener('DOMContentLoaded', function() {
+      bird = document.querySelector('.bird')
+      gameDisplay = document.querySelector('.game-container')
+      ground = document.querySelector('.ground')
+      scoreBoard = document.querySelector('#score')
+      startScreen = document.querySelector('#startScreen')
+      gameOverScreen = document.querySelector('#gameOverScreen')
+      finalScore = document.querySelector('#finalScore')
+      settingsScreen = document.querySelector('#settingsScreen')
+      bestScoreDisplay = document.querySelector('#bestScore')
+      
+      if (bird) {
+        bird.style.left = birdLeft + 'px'
+        bird.style.bottom = birdBottom + 'px'
+      }
+      
+      // تهيئة الأصوات
+      gameSounds.init()
+      
+      // تحميل الإعدادات المحفوظة
+      loadSettings()
+      
+      // إعداد مستمعي الأحداث
+      setupButtonListeners()
+      
+      // تهيئة متغيرات اللعبة
+      initGameVars()
+      
+      // إظهار أفضل نتيجة
+      updateBestScoreDisplay()
+    })
+
+    // إعداد مستمعي الأحداث
+    function setupButtonListeners() {
+      // تنظيف Event Listeners القديمة
+      removeAllEventListeners()
+      
+      // زر بدء اللعبة
+      const startGameBtn = document.getElementById('startGameBtn')
+      addEventListenerSafe(startGameBtn, 'click', startGame)
+      
+      // زر الإعدادات
+      const settingsBtn = document.getElementById('settingsBtn')
+      addEventListenerSafe(settingsBtn, 'click', toggleSettings)
+      
+      // زر إعادة اللعب
+      const restartGameBtn = document.getElementById('restartGameBtn')
+      if (restartGameBtn) {
+        addEventListenerSafe(restartGameBtn, 'click', restartGame)
+      }
+      
+      // زر القائمة الرئيسية
+      const mainMenuBtn = document.getElementById('mainMenuBtn')
+      if (mainMenuBtn) {
+        addEventListenerSafe(mainMenuBtn, 'click', showMainMenu)
+      }
+      
+      // زر حفظ الإعدادات
+      const saveSettingsBtn = document.getElementById('saveSettingsBtn')
+      addEventListenerSafe(saveSettingsBtn, 'click', saveSettings)
+      
+      // زر الرجوع
+      const backBtn = document.getElementById('backBtn')
+      addEventListenerSafe(backBtn, 'click', showMainMenu)
+    }
+
+    // إضافة مستمع حدث آمن
+    function addEventListenerSafe(element, event, handler) {
+      if (element) {
+        element.addEventListener(event, handler)
+      }
+    }
+
+    // إزالة جميع مستمعي الأحداث
+    function removeAllEventListeners() {
+      document.removeEventListener('keydown', control)
+      document.removeEventListener('click', handleClick)
+      document.removeEventListener('touchstart', handleTouch)
+    }
+
+    // بدء اللعبة
+    function startGame() {
+      if (!gameDisplay || !startScreen) return
+      
+      // إخفاء شاشة البداية
+      startScreen.style.display = 'none'
+      
+      // إظهار شاشة اللعبة
+      gameDisplay.style.display = 'block'
+      
+      // إعادة تشغيل حركة الأرض
+      if (ground) {
+        ground.classList.add('moving')
+      }
+      
+      // إضافة مستمعي الأحداث
+      document.addEventListener('keydown', control)
+      document.addEventListener('click', handleClick)
+      document.addEventListener('touchstart', handleTouch)
+      
+      // بدء حلقة اللعبة
+      gameLoop()
+      
+      // بدء توليد العقبات
+      generateObstacle()
+      
+      // إخفاء تلميح التحكم
+      hideControlsHint()
+    }
+
+    // حلقة اللعبة الرئيسية
+    function gameLoop() {
+      if (isGameOver) return
+      
+      // تطبيق الجاذبية
+      birdBottom -= gravity
+      if (bird) {
+        bird.style.bottom = birdBottom + 'px'
+      }
+      
+      // تحريك العقبات
+      moveObstacles()
+      
+      // فحص التصادم
+      checkAllCollisions()
+      
+      // تحديث النتيجة
+      updateScore()
+      
+      // متابعة الحلقة
+      gameTimerId = setTimeout(gameLoop, 20)
+    }
+
+    // توليد عقبة جديدة
+    function generateObstacle() {
+      if (isGameOver || !gameDisplay) return
+      
+      const gameHeight = gameDisplay.offsetHeight
+      const groundHeight = 80
+      const minHeight = 50
+      const maxHeight = gameHeight - groundHeight - gap - minHeight
+      
+      const obstacleHeight = Math.random() * (maxHeight - minHeight) + minHeight
+      const topObstacleHeight = gameHeight - groundHeight - obstacleHeight - gap
+      
+      // إنشاء العقبة السفلية
+      const obstacle = document.createElement('div')
+      obstacle.className = 'obstacle'
+      obstacle.style.left = gameDisplay.offsetWidth + 'px'
+      obstacle.style.bottom = '0px'
+      obstacle.style.height = obstacleHeight + 'px'
+      obstacle.style.width = '70px'
+      obstacle.style.minWidth = '70px'
+      obstacle.style.maxWidth = '70px'
+      
+      // إنشاء العقبة العلوية
+      const topObstacle = document.createElement('div')
+      topObstacle.className = 'topObstacle'
+      topObstacle.style.left = gameDisplay.offsetWidth + 'px'
+      topObstacle.style.top = '0px'
+      topObstacle.style.bottom = 'auto'
+      topObstacle.style.height = topObstacleHeight + 'px'
+      topObstacle.style.width = '70px'
+      topObstacle.style.minWidth = '70px'
+      topObstacle.style.maxWidth = '70px'
+      
+      gameDisplay.appendChild(obstacle)
+      gameDisplay.appendChild(topObstacle)
+      
+      // إضافة العقبة إلى المصفوفة النشطة
+      const obstacleData = {
+        element: obstacle,
+        topElement: topObstacle,
+        left: gameDisplay.offsetWidth,
+        bottomHeight: obstacleHeight,
+        topHeight: topObstacleHeight,
+        passed: false,
+        timerId: null
+      }
+      
+      activeObstacles.push(obstacleData)
+      
+      // تحديد العقبة التالية
+      const nextDelay = Math.max(1500 - (score * 20), 800)
+      generateObstacleTimeout = setTimeout(generateObstacle, nextDelay)
+    }
+
+    // تحريك العقبات
+    function moveObstacles() {
+      activeObstacles.forEach(obstacleData => {
+        obstacleData.left -= gameSpeed
+        
+        if (obstacleData.element) {
+          obstacleData.element.style.left = obstacleData.left + 'px'
+        }
+        if (obstacleData.topElement) {
+          obstacleData.topElement.style.left = obstacleData.left + 'px'
+        }
+        
+        // إزالة العقبات التي خرجت من الشاشة
+        if (obstacleData.left < -70) {
+          if (obstacleData.element) obstacleData.element.remove()
+          if (obstacleData.topElement) obstacleData.topElement.remove()
+          
+          // إزالة من المصفوفة
+          const index = activeObstacles.indexOf(obstacleData)
+          if (index > -1) {
+            activeObstacles.splice(index, 1)
+          }
+        }
+      })
+    }
+
+    // فحص جميع التصادمات
+    function checkAllCollisions() {
+      if (!bird || !gameDisplay) return
+      
+      const birdRect = bird.getBoundingClientRect()
+      const gameRect = gameDisplay.getBoundingClientRect()
+      
+      // تحويل الإحداثيات النسبية
+      const birdLeft = birdRect.left - gameRect.left
+      const birdTop = birdRect.top - gameRect.top
+      const birdRight = birdRect.right - gameRect.left
+      const birdBottom = birdRect.bottom - gameRect.top
+      
+      // فحص التصادم مع العقبات
+      activeObstacles.forEach(obstacleData => {
+        if (!obstacleData.element || !obstacleData.topElement) return
+        
+        const obstacleRect = obstacleData.element.getBoundingClientRect()
+        const topObstacleRect = obstacleData.topElement.getBoundingClientRect()
+        
+        // تحويل إحداثيات العقبات
+        const obstacleLeft = obstacleRect.left - gameRect.left
+        const obstacleRight = obstacleRect.right - gameRect.left
+        const obstacleTop = obstacleRect.top - gameRect.top
+        const obstacleBottom = obstacleRect.bottom - gameRect.top
+        
+        const topObstacleLeft = topObstacleRect.left - gameRect.left
+        const topObstacleRight = topObstacleRect.right - gameRect.left
+        const topObstacleTop = topObstacleRect.top - gameRect.top
+        const topObstacleBottom = topObstacleRect.bottom - gameRect.top
+        
+        // فحص التصادم الأفقي
+        const horizontalOverlap = birdRight > obstacleLeft && birdLeft < obstacleRight
+        
+        if (horizontalOverlap) {
+          // فحص التصادم مع العقبة السفلية
+          if (birdBottom > obstacleTop) {
+            gameOver()
+            return
+          }
+          
+          // فحص التصادم مع العقبة العلوية
+          if (birdTop < topObstacleBottom) {
+            gameOver()
+            return
+          }
+        }
+      })
+      
+      // فحص التصادم مع الأرض
+      if (birdBottom <= 0) {
+        gameOver()
+      }
+      
+      // فحص التصادم مع السقف
+      if (birdTop <= 0) {
+        gameOver()
+      }
+    }
+
+    // تحديث النتيجة
+    function updateScore() {
+      activeObstacles.forEach(obstacleData => {
+        if (!obstacleData.passed && obstacleData.left + 70 < birdLeft) {
+          obstacleData.passed = true
+          score++
+          
+          if (scoreBoard) {
+            scoreBoard.textContent = 'Score: ' + score
+          }
+          
+          // تشغيل صوت النقطة
+          gameSounds.playPoint()
+          
+          // إظهار تأثير النقطة
+          if (gameSettings.effectsEnabled) {
+            showScoreEffect()
+          }
+          
+          // زيادة الصعوبة تدريجياً
+          if (score % 15 === 0) {
+            gameSpeed += 0.03
+            if (gap > 100) gap -= 1
+          }
+        }
+      })
+    }
+
+    // إظهار تأثير النقطة
+    let scoreEffectElement = null
+    function showScoreEffect() {
+      if (!gameDisplay) return
+      
+      // إعادة استخدام العنصر إذا كان موجوداً
+      if (!scoreEffectElement) {
+        scoreEffectElement = document.createElement('div')
+        scoreEffectElement.className = 'score-effect'
+        gameDisplay.appendChild(scoreEffectElement)
+      }
+      
+      scoreEffectElement.textContent = '+1'
+      scoreEffectElement.style.left = '50%'
+      scoreEffectElement.style.top = '30%'
+      scoreEffectElement.style.transform = 'translateX(-50%)'
+      
+      // إعادة تشغيل الرسوم المتحركة
+      scoreEffectElement.style.animation = 'none'
+      scoreEffectElement.offsetHeight // إجبار إعادة الرسم
+      scoreEffectElement.style.animation = 'scorePop 0.6s ease-out forwards'
+    }
+
+    // التحكم بالطائر
+    let lastJumpTime = 0
+    const jumpCooldown = 100 // 100ms cooldown
+
+    function jump() {
+      const now = Date.now()
+      if (now - lastJumpTime < jumpCooldown) return
+      
+      lastJumpTime = now
+      
+      if (isGameOver) return
+      
+      birdBottom += 50
+      if (bird) {
+        bird.style.bottom = birdBottom + 'px'
+        
+        // إضافة تأثير القفزة
+        if (gameSettings.effectsEnabled) {
+          bird.classList.add('jumping')
+          setTimeout(() => {
+            bird.classList.remove('jumping')
+          }, 100)
+        }
+      }
+      
+      // تشغيل صوت القفزة
+      gameSounds.playJump()
+      
+      // إخفاء تلميح التحكم
+      hideControlsHint()
+    }
+
+    // معالج الأحداث
+    function control(e) {
+      if (e.code === 'Space') {
+        e.preventDefault()
+        jump()
+      }
+    }
+
+    function handleClick(e) {
+      e.preventDefault()
+      jump()
+    }
+
+    function handleTouch(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      jump()
+    }
+
+    // إخفاء تلميح التحكم
+    function hideControlsHint() {
+      // إخفاء أي تلميح موجود
+    }
+
+    // انتهاء اللعبة
+    function gameOver() {
+      if (isGameOver) return
+      
+      isGameOver = true
+      
+      // إيقاف جميع المؤقتات
+      if (gameTimerId) {
+        clearTimeout(gameTimerId)
+        gameTimerId = null
+      }
+      
+      if (generateObstacleTimeout) {
+        clearTimeout(generateObstacleTimeout)
+        generateObstacleTimeout = null
+      }
+      
+      // إيقاف حركة الأرض
+      if (ground) {
+        ground.classList.remove('moving')
+      }
+      
+      // تشغيل صوت الاصطدام
+      gameSounds.playHit()
+      
+      // تحديث أفضل نتيجة
+      updateBestScore()
+      
+      // إظهار شاشة Game Over
+      if (gameOverScreen && finalScore) {
+        const isNewRecord = score > getBestScore()
+        finalScore.innerHTML = `
+          <div style="font-size: 28px; margin-bottom: 15px;">Game Over 😢</div>
+          <div style="font-size: 24px; margin-bottom: 10px;">Score: ${score}</div>
+          ${isNewRecord ? '<div style="color: #ffd700; font-size: 20px;">🎉 New Record!</div>' : ''}
+        `
+        gameOverScreen.style.display = 'flex'
+      }
+      
+      // إزالة مستمعي الأحداث
+      removeAllEventListeners()
+    }
+
+    // إعادة تشغيل اللعبة
+    function restartGame() {
+      // التأكد من تهيئة المتغيرات
+      if (!gameDisplay || !gameOverScreen) {
+        return
+      }
+      
+      // إيقاف جميع المؤقتات
+      if (gameTimerId) {
+        clearTimeout(gameTimerId)
+        gameTimerId = null
+      }
+      
+      // إيقاف جميع مؤقتات العقبات النشطة
+      activeObstacles.forEach(obstacle => {
+        if (obstacle.timerId) {
+          clearTimeout(obstacle.timerId)
+        }
+      })
+      
+      // إلغاء setTimeout لتجنب تسريبات الذاكرة
+      if (generateObstacleTimeout) {
+        clearTimeout(generateObstacleTimeout)
+        generateObstacleTimeout = null
+      }
+      
+      // إعادة تعيين جميع المؤقتات
+      gameTimerId = null
+      
+      // إزالة جميع مستمعي الأحداث قبل إعادة التشغيل
+      document.removeEventListener('keydown', control)
+      document.removeEventListener('click', handleClick)
+      document.removeEventListener('touchstart', handleTouch)
+      
+      // إزالة جميع العقبات الموجودة
+      const obstacles = document.querySelectorAll('.obstacle, .topObstacle')
+      obstacles.forEach(obstacle => obstacle.remove())
+      
+      // إعادة تعيين مصفوفة العقبات النشطة
+      activeObstacles = []
+      
+      // إعادة تعيين المتغيرات
+      isGameOver = false
+      score = 0
+      
+      // إعادة تعيين موضع الطائر والعناصر البصرية
+      if (bird) {
+        birdLeft = 150
+        birdBottom = 250
+        bird.style.left = birdLeft + 'px'
+        bird.style.bottom = birdBottom + 'px'
+        
+        // إزالة جميع التأثيرات البصرية
+        if (gameSettings.effectsEnabled) {
+          bird.classList.remove('jumping', 'falling')
+        }
+      }
+      
+      // إعادة تعيين النتيجة
+      if (scoreBoard) {
+        scoreBoard.textContent = 'Score: 0'
+      }
+      
+      // إخفاء شاشة Game Over
+      if (gameOverScreen) {
+        gameOverScreen.style.display = 'none'
+      }
+      
+      // التأكد من إعادة تشغيل حركة الأرض
+      if (ground) {
+        ground.classList.add('moving')
+      }
+      
+      // إعادة تشغيل اللعبة
+      startGame()
+    }
+
+    // إظهار القائمة الرئيسية
+    function showMainMenu() {
+      // إيقاف اللعبة إذا كانت تعمل
+      if (gameTimerId) {
+        clearTimeout(gameTimerId)
+        gameTimerId = null
+      }
+      
+      // إعادة تعيين حالة اللعبة
+      isGameOver = false
+      
+      // إخفاء جميع الشاشات
+      if (gameOverScreen) {
+        gameOverScreen.style.display = 'none'
+      }
+      if (settingsScreen) {
+        settingsScreen.style.display = 'none'
+      }
+      
+      // إظهار شاشة البداية
+      if (startScreen) {
+        startScreen.style.display = 'flex'
+      }
+      
+      // تحديث أفضل نتيجة
+      updateBestScoreDisplay()
+      
+      // إعادة تهيئة متغيرات اللعبة
+      initGameVars()
+    }
+
+    // تبديل الإعدادات
+    function toggleSettings() {
+      if (startScreen) startScreen.style.display = 'none'
+      if (settingsScreen) settingsScreen.style.display = 'flex'
+      
+      // تحديث قيم الإعدادات
+      updateSettingsDisplay()
+    }
+
+    // تحديث عرض الإعدادات
+    function updateSettingsDisplay() {
+      const difficultySlider = document.getElementById('difficultySlider')
+      const difficultyText = document.getElementById('difficultyText')
+      const soundToggle = document.getElementById('soundToggle')
+      const effectsToggle = document.getElementById('effectsToggle')
+      
+      if (difficultySlider) difficultySlider.value = gameSettings.difficulty
+      if (soundToggle) soundToggle.checked = gameSettings.soundEnabled
+      if (effectsToggle) effectsToggle.checked = gameSettings.effectsEnabled
+      
+      if (difficultyText) {
+        const difficultyNames = ['', 'سهل', 'متوسط', 'صعب']
+        difficultyText.textContent = difficultyNames[gameSettings.difficulty]
+      }
+    }
+
+    // حفظ الإعدادات
+    function saveSettings() {
+      const difficultySlider = document.getElementById('difficultySlider')
+      const soundToggle = document.getElementById('soundToggle')
+      const effectsToggle = document.getElementById('effectsToggle')
+      
+      if (difficultySlider) gameSettings.difficulty = parseInt(difficultySlider.value)
+      if (soundToggle) gameSettings.soundEnabled = soundToggle.checked
+      if (effectsToggle) gameSettings.effectsEnabled = effectsToggle.checked
+      
+      // حفظ في localStorage
+      try {
+        localStorage.setItem('flappyBirdSettings', JSON.stringify(gameSettings))
+      } catch (error) {
+        console.warn('لا يمكن حفظ الإعدادات:', error)
+      }
+      
+      // العودة للقائمة الرئيسية
+      showMainMenu()
+    }
+
+    // تحميل الإعدادات
+    function loadSettings() {
+      try {
+        const savedSettings = localStorage.getItem('flappyBirdSettings')
+        if (savedSettings) {
+          const parsed = JSON.parse(savedSettings)
+          gameSettings = { ...gameSettings, ...parsed }
+        }
+      } catch (error) {
+        console.warn('لا يمكن تحميل الإعدادات:', error)
+      }
+    }
+
+    // تحديث أفضل نتيجة
+    function updateBestScore() {
+      const currentBest = getBestScore()
+      if (score > currentBest) {
+        try {
+          localStorage.setItem('flappyBirdBestScore', score.toString())
+          updateBestScoreDisplay()
+        } catch (error) {
+          console.warn('لا يمكن حفظ أفضل نتيجة:', error)
+        }
+      }
+    }
+
+    // الحصول على أفضل نتيجة
+    function getBestScore() {
+      try {
+        const best = localStorage.getItem('flappyBirdBestScore')
+        return best ? parseInt(best) : 0
+      } catch (error) {
+        console.warn('لا يمكن قراءة أفضل نتيجة:', error)
+        return 0
+      }
+    }
+
+    // تحديث عرض أفضل نتيجة
+    function updateBestScoreDisplay() {
+      if (bestScoreDisplay) {
+        const best = getBestScore()
+        bestScoreDisplay.textContent = 'Best Score: ' + best
+      }
+    }
+  </script>
+</body>
+</html>
