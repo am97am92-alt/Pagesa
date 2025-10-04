@@ -1,0 +1,3100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html b:version='2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+  &lt;meta expr:content='data:blog.isMobile ? &quot;width=device-width,initial-scale=1.0&quot; : &quot;width=device-width&quot;' name='viewport'/&gt;
+  <title><data:blog.pageTitle/></title>
+  
+  &lt;!-- SEO Meta Tags --&gt;
+  &lt;meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : &quot;مدونة AddonForge - مقالات تقنية، إضافات، ألعاب، وتطوير الويب&quot;' name='description'/&gt;
+  <meta content='تقنية، برمجة، تطوير ويب، ألعاب، إضافات، Blogger، HTML، CSS، JavaScript' name='keywords'/>
+  <meta content='AddonForge' name='author'/>
+  <meta content='index, follow' name='robots'/>
+  <meta content='ar' name='language'/>
+  <meta content='7 days' name='revisit-after'/>
+  
+  &lt;!-- Open Graph Meta Tags --&gt;
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+  &lt;meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : &quot;مدونة AddonForge - مقالات تقنية، إضافات، ألعاب، وتطوير الويب&quot;' property='og:description'/&gt;
+  <meta content='website' property='og:type'/>
+  <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+  <meta content='AddonForge' property='og:site_name'/>
+  <meta content='ar_AR' property='og:locale'/>
+  &lt;meta expr:content='data:blog.postImageThumbnailUrl ? data:blog.postImageThumbnailUrl : &quot;https://lh3.googleusercontent.com/pw/AP1GczOJAPs3IGUWaeNnC5XQYIM2Z5RaAwRbVpTSv32C2PqYGJalpG3GQ3Ji_3FevJutmL_QlRBxdFajSBZiFmGRIViJS1IP6vLiMXJKklQZojtQFHN3vPsrso3jH9DXl7O5K0PAvihifVnwORCbGl6sosI=w919-h919-s-no-gm?authuser=0&quot;' property='og:image'/&gt;
+  <meta content='1200' property='og:image:width'/>
+  <meta content='630' property='og:image:height'/>
+  
+  &lt;!-- Twitter Card Meta Tags --&gt;
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+  &lt;meta expr:content='data:blog.metaDescription ? data:blog.metaDescription : &quot;مدونة AddonForge - مقالات تقنية، إضافات، ألعاب، وتطوير الويب&quot;' name='twitter:description'/&gt;
+  &lt;meta expr:content='data:blog.postImageThumbnailUrl ? data:blog.postImageThumbnailUrl : &quot;https://lh3.googleusercontent.com/pw/AP1GczOJAPs3IGUWaeNnC5XQYIM2Z5RaAwRbVpTSv32C2PqYGJalpG3GQ3Ji_3FevJutmL_QlRBxdFajSBZiFmGRIViJS1IP6vLiMXJKklQZojtQFHN3vPsrso3jH9DXl7O5K0PAvihifVnwORCbGl6sosI=w919-h919-s-no-gm?authuser=0&quot;' name='twitter:image'/&gt;
+  <meta content='@addonforge' name='twitter:site'/>
+  
+  &lt;!-- Canonical URL --&gt;
+  <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+  
+  &lt;!-- Favicon --&gt;
+  <link href='https://lh3.googleusercontent.com/pw/AP1GczOJAPs3IGUWaeNnC5XQYIM2Z5RaAwRbVpTSv32C2PqYGJalpG3GQ3Ji_3FevJutmL_QlRBxdFajSBZiFmGRIViJS1IP6vLiMXJKklQZojtQFHN3vPsrso3jH9DXl7O5K0PAvihifVnwORCbGl6sosI=w919-h919-s-no-gm?authuser=0' rel='icon' type='image/x-icon'/>
+  <link href='https://lh3.googleusercontent.com/pw/AP1GczOJAPs3IGUWaeNnC5XQYIM2Z5RaAwRbVpTSv32C2PqYGJalpG3GQ3Ji_3FevJutmL_QlRBxdFajSBZiFmGRIViJS1IP6vLiMXJKklQZojtQFHN3vPsrso3jH9DXl7O5K0PAvihifVnwORCbGl6sosI=w919-h919-s-no-gm?authuser=0' rel='apple-touch-icon'/>
+  
+  &lt;!-- Preconnect to external domains --&gt;
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link href='https://s3.tradingview.com' rel='preconnect'/>
+  <link href='https://www.gstatic.com' rel='preconnect'/>
+  
+  &lt;!-- DNS Prefetch --&gt;
+  <link href='//blogger.googleusercontent.com' rel='dns-prefetch'/>
+  <link href='//lh3.googleusercontent.com' rel='dns-prefetch'/>
+<b:skin>&lt;![CDATA[
+/* إخفاء رابط الصفحة الرئيسية أسفل المقالات */
+a.home-link {
+  display: none !important;
+}
+
+/* إخفاء رابط الاشتراك (Atom) */
+.feed-links {
+  display: none !important;
+}
+.gsc-input input {
+  width: 100% !important;   /* عرض الحقل */
+  height: 40px;             /* ارتفاع الحقل */
+  font-size: 18px;          /* حجم النص داخل الحقل (40px كان ضخم جداً) */
+}
+
+/* زر ابحث مثل nav-btn */
+.gsc-search-button input {
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 6px solid #8a7d6c;
+  background: #2D2F33; /* رمادي مزرق غامق */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    -8px -8px 16px rgba(255, 0, 0, 0.1),
+     8px  8px 16px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 6px rgba(255, 0, 0, 0.08),
+    inset  3px  3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* hover */
+.gsc-search-button input:hover {
+  background: var(--dark-cold);
+  transform: translateY(-3px);
+}
+
+/* active */
+.gsc-search-button input:active {
+  background: var(--charcoal);
+}
+
+/* إضافة مسافة من الأعلى للهيدر */
+#header, #header-inner {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+/* 🎯 ألوان */
+:root {
+  --dark-bg: #2A2A2A;
+  --dark-gray: #2D2F33;
+  --dark-cold: #3A3D41;
+  --charcoal: #333333;
+  --text-color: #fff;
+
+  /* 🆕 النصوص والروابط */
+  --text-main: #ffffff;        /* النص العادي */
+  --text-muted: #aaaaaa;       /* النصوص الثانوية */
+  --text-link: #1e88e5;        /* لون الرابط */
+  --text-link-hover: #64b5f6;  /* عند المرور */
+  --text-link-visited: #1565c0;/* بعد الزيارة */
+
+  /* 🆕 الخطوط */
+  --font-family: "Tajawal", sans-serif;
+  --font-size-body: 24px;
+  --font-size-title: 40px;
+  --font-size-subtitle: 24px;
+}
+
+/* 📊 متغيرات التحكم */
+:root {
+  /* خلفية الصورة */
+  --bg-image-opacity: 100%;
+  --bg-image-size-width: 100%;
+  --bg-image-size-height: 100%;
+  --bg-image-position-x: center;
+  --bg-image-position-y: center;
+  
+  /* المساحات */
+  --body-margin: 2%;
+  --body-padding: 0;
+  --body-min-height: 100vh;
+  
+  /* الحدود والظلال */
+  --border-width: 15px;
+  --border-radius: 20px;
+  --shadow-intensity: 1;
+  
+  /* الحاويات */
+  --container-max-width: 95%;
+  --frame-box-margin: 15px;
+  --frame-box-padding: 20px;
+  --frame-box-border-radius: 16px;
+  
+  /* الناف بار */
+  --nav-gap: 15px;
+  --nav-btn-padding: 10px 20px;
+  --nav-btn-border-radius: 16px;
+  
+  /* الأيقونات */
+  --social-icon-size: 40px;
+  --social-icon-padding: 6px;
+}
+
+/* ✨ إطار عام للأقسام */
+.frame-box {
+  border: 15px solid #8a7d6c;
+  border-radius: var(--frame-box-border-radius);
+  background: var(--dark-gray);
+  box-shadow:
+    -8px -8px 16px rgba(255, 0, 0, 0.1),
+     8px  8px 16px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 6px rgba(255, 0, 0, 0.08),
+    inset  3px  3px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  margin: var(--frame-box-margin) 0;
+  padding: var(--frame-box-padding);
+}
+
+/* ===== الصفحة ===== */
+body {
+  margin: var(--body-margin); 
+  padding: var(--body-padding);
+  min-height: var(--body-min-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: 1.8;
+  background: var(--dark-bg) url("https://lh3.googleusercontent.com/pw/AP1GczOJAPs3IGUWaeNnC5XQYIM2Z5RaAwRbVpTSv32C2PqYGJalpG3GQ3Ji_3FevJutmL_QlRBxdFajSBZiFmGRIViJS1IP6vLiMXJKklQZojtQFHN3vPsrso3jH9DXl7O5K0PAvihifVnwORCbGl6sosI=w919-h919-s-no-gm?authuser=0") 
+              no-repeat var(--bg-image-position-x) var(--bg-image-position-y) fixed;
+  background-size: var(--bg-image-size-width) var(--bg-image-size-height);
+  color: var(--text-main);
+
+  border: var(--border-width) solid #8a7d6c;
+  border-radius: var(--border-radius);
+  box-shadow:
+    calc(-25px * var(--shadow-intensity)) calc(-25px * var(--shadow-intensity)) calc(50px * var(--shadow-intensity)) rgba(255, 0, 0, 0.2),
+     calc(25px * var(--shadow-intensity))  calc(25px * var(--shadow-intensity)) calc(50px * var(--shadow-intensity)) rgba(0, 0, 0, 0.9),
+    calc(-15px * var(--shadow-intensity)) calc(-15px * var(--shadow-intensity)) calc(30px * var(--shadow-intensity)) rgba(255, 0, 0, 0.15),
+     calc(15px * var(--shadow-intensity))  calc(15px * var(--shadow-intensity)) calc(30px * var(--shadow-intensity)) rgba(0, 0, 0, 0.8),
+    inset calc(-8px * var(--shadow-intensity)) calc(-8px * var(--shadow-intensity)) calc(16px * var(--shadow-intensity)) rgba(255, 0, 0, 0.1),
+    inset  calc(8px * var(--shadow-intensity))  calc(8px * var(--shadow-intensity)) calc(16px * var(--shadow-intensity)) rgba(0, 0, 0, 0.8),
+    0 0 0 calc(6px * var(--shadow-intensity)) rgba(255, 255, 255, 0.15),
+    0 0 0 calc(12px * var(--shadow-intensity)) rgba(0, 0, 0, 0.6);
+}
+
+.container { 
+  max-width: var(--container-max-width); 
+  width: 100%; 
+  margin: auto; 
+}
+
+/* ===== النصوص والعناوين ===== */
+h1, .post-title {
+  font-size: var(--font-size-title);
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+h2, h3 {
+  font-size: var(--font-size-subtitle);
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+.post-meta, .post-author, .post-date, .post-labels {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ===== الروابط ===== */
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--text-link-visited);
+}
+
+/* ===== الناف بار ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  gap: var(--nav-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 6px solid #8a7d6c;
+  background: #2D2F33; /* رمادي مزرق غامق */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow:
+    -8px -8px 16px rgba(255, 0, 0, 0.1),
+     8px  8px 16px rgba(0, 0, 0, 0.6),
+    inset -3px -3px 6px rgba(255, 0, 0, 0.08),
+    inset  3px  3px 6px rgba(0, 0, 0, 0.5);
+}
+.nav-btn:hover {
+  background: var(--dark-cold);
+  transform: translateY(-3px);
+}
+.nav-btn.active {
+  background: var(--charcoal);
+}
+
+/* ===== أيقونات التواصل ===== */
+.menu-right {
+  display: flex;
+  gap: 10px;
+}
+.menu-right .social-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2D2F33;
+  padding: 8px;
+  transition: all 0.3s ease;
+  box-shadow:
+    -6px -6px 12px rgba(255, 0, 0, 0.1),
+     6px  6px 12px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 4px rgba(255, 0, 0, 0.08),
+    inset  2px  2px 4px rgba(0, 0, 0, 0.5);
+}
+.menu-right .social-icon img:hover {
+  transform: scale(1.1);
+  background: var(--dark-cold);
+}
+
+/* ===== الفوتر 2 (3 أعمدة) ===== */
+.footer2 {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+.footer2 &gt; div {
+  flex: 1;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background: #222;
+}
+
+.game-container {
+  width: 70vw;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #70c5ce;
+  max-width: 800px;
+  min-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.sky {
+  background-image: url('https://drive.google.com/uc?export=download&id=19HU_H8ZbAIOFpi2ptcuEKWuQWsxhymqq');
+  width: 100%;
+  height: 420px;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ground {
+  background-image: url('https://drive.google.com/uc?export=download&id=1sQLyC8J13NcM-YWDHWd2r4gRH1mSuoV-');
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.bird {
+  background-image: url('https://drive.google.com/uc?export=download&id=1-dsg4kx6VBcJYnz2QUTio6WPbPnlmois');
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  left: 150px;
+  bottom: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.obstacle, .topObstacle {
+  background-image: url('https://drive.google.com/uc?export=download&id=1C6gFsU0l4n4svmntQy38iZc_4gFOvUlH');
+  width: 70px;
+  position: absolute;
+  background-size: 70px 100%;
+  background-repeat: no-repeat;
+}
+.topObstacle { transform: rotate(180deg); }
+
+.score-board {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  z-index: 5;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+}
+
+
+/* ===== استجابة الشاشات المختلفة ===== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 98%;
+  }
+  
+  .frame-box {
+    margin: 12px 0;
+    padding: 18px;
+  }
+  
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 1%;
+    font-size: 20px;
+  }
+  
+  .container {
+    max-width: 99%;
+  }
+  
+  .frame-box {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .nav-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin: 2px;
+  }
+  
+  .menu-right {
+    gap: 8px;
+  }
+  
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .footer2 {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer2 &gt; div {
+    margin-bottom: 10px;
+  }
+  
+  h1, .post-title {
+    font-size: 32px;
+  }
+  
+  h2, h3 {
+    font-size: 20px;
+  }
+  
+  /* لعبة Flappy Bird للشاشات المتوسطة */
+  .game-container {
+    height: 400px;
+    max-width: 350px;
+  }
+  
+  .sky {
+    height: 320px;
+  }
+  
+  .score-board {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 0.5%;
+    font-size: 18px;
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+  
+  .frame-box {
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  nav ul {
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .nav-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin: 1px;
+  }
+  
+  .menu-right {
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .social-icon img {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+  }
+  
+  h1, .post-title {
+    font-size: 28px;
+  }
+  
+  h2, h3 {
+    font-size: 18px;
+  }
+  
+  /* لعبة Flappy Bird للشاشات الصغيرة */
+  .game-container {
+    height: 350px;
+    max-width: 300px;
+  }
+  
+  .sky {
+    height: 270px;
+  }
+  
+  .score-board {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+  
+  .bird {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .overlay div {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .nav-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
+  .social-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  h1, .post-title {
+    font-size: 24px;
+  }
+  
+  h2, h3 {
+    font-size: 16px;
+  }
+}
+
+/* ===== تحسينات الأداء ===== */
+.frame-box {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.nav-btn, .social-icon img {
+  will-change: transform;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+/* تحسين تحميل الصور */
+img {
+  loading: lazy;
+  decoding: async;
+}
+
+/* تحسين الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+/* تحسين الأداء العام */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-display: swap;
+}
+
+/* تحسين التمرير */
+html {
+  scroll-behavior: smooth;
+}
+
+/* تحسين الذاكرة */
+.game-container, .tradingview-widget-container {
+  contain: layout style paint;
+}
+
+/* ===== تحسينات الوصولية ===== */
+.nav-btn:focus, .social-icon:focus {
+  outline: 2px solid #1e88e5;
+  outline-offset: 2px;
+}
+
+/* ===== تحسينات إضافية ===== */
+.post-title {
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.post-meta, .post-author, .post-date, .post-labels {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* تحسين عرض النصوص */
+.post-body {
+  line-height: 1.8;
+  word-spacing: 1px;
+}
+
+/* تحسين الأزرار */
+.overlay button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ===== تحسينات إضافية متقدمة ===== */
+
+/* تحسين التباين والنقاء */
+.post-title {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* تحسين النصوص */
+.post-body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* تحسين الروابط */
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/* تحسين النماذج */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* تحسين الجداول */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* تحسين القوائم */
+ul, ol {
+  padding-left: 1.5em;
+}
+
+/* تحسين الكود */
+code, pre {
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* تحسين الاقتباسات */
+blockquote {
+  border-left: 4px solid var(--text-link);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* تحسين الصور */
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين الفيديو */
+.post-body video, .post-body iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* تحسين الألوان للمحتوى */
+.post-body a {
+  color: var(--text-link);
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.post-body a:hover {
+  border-bottom-color: var(--text-link);
+}
+
+/* تحسين العناوين الفرعية */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+h1:first-child, h2:first-child, h3:first-child {
+  margin-top: 0;
+}
+
+/* تحسين المسافات */
+.post-body p {
+  margin-bottom: 20px;
+}
+
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* تحسين القوائم في المحتوى */
+.post-body ul, .post-body ol {
+  margin-bottom: 20px;
+}
+
+.post-body li {
+  margin-bottom: 8px;
+}
+
+/* تحسين الجداول في المحتوى */
+.post-body table {
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-body th, .post-body td {
+  padding: 12px 15px;
+  text-align: right;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-body th {
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+}
+
+/* تحسين الأزرار في المحتوى */
+.post-body .button, .post-body button {
+  background: var(--text-link);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.post-body .button:hover, .post-body button:hover {
+  background: var(--text-link-hover);
+}
+
+/* تحسين التنبيهات */
+.alert, .notice {
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.alert-success, .notice-success {
+  background: rgba(76, 175, 80, 0.1);
+  border-left-color: #4caf50;
+  color: #4caf50;
+}
+
+.alert-warning, .notice-warning {
+  background: rgba(255, 193, 7, 0.1);
+  border-left-color: #ffc107;
+  color: #ffc107;
+}
+
+.alert-error, .notice-error {
+  background: rgba(244, 67, 54, 0.1);
+  border-left-color: #f44336;
+  color: #f44336;
+}
+
+.alert-info, .notice-info {
+  background: rgba(33, 150, 243, 0.1);
+  border-left-color: #2196f3;
+  color: #2196f3;
+}
+
+/* ===== لعبة Flappy Bird ===== */
+.game-container {
+  width: 70vw;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #70c5ce;
+  max-width: 800px;
+  min-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* تحسين الاستجابة للأجهزة المختلفة */
+@media (max-width: 768px) {
+  .game-container {
+    width: 90vw;
+    height: 400px;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    width: 95vw;
+    height: 350px;
+    min-width: 280px;
+  }
+}
+
+.sky {
+  background-image: url('https://drive.google.com/uc?export=view&id=1YOUR_BACKGROUND_IMAGE_ID');
+  width: 100%;
+  height: 420px;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+/* تحسين الاستجابة للسماء */
+@media (max-width: 768px) {
+  .sky {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sky {
+    height: 270px;
+  }
+}
+
+.bird {
+  background-image: url('https://drive.google.com/uc?export=view&id=1YOUR_BIRD_IMAGE_ID');
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-size: cover;
+  left: 150px;
+  bottom: 250px;
+  transition: all 0.1s ease;
+  z-index: 10;
+  animation: wingFlap 0.3s ease-in-out infinite;
+}
+
+@keyframes wingFlap {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.8); }
+}
+
+.bird.jumping {
+  animation: wingFlap 0.2s ease-in-out infinite, jumpRotate 0.1s ease-in-out;
+}
+
+@keyframes jumpRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-15deg); }
+}
+
+/* تحسين الاستجابة للطائر */
+@media (max-width: 480px) {
+  .bird {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.obstacle, .topObstacle {
+  background-image: url('https://drive.google.com/uc?export=view&id=1YOUR_PIPE_IMAGE_ID');
+  width: 70px !important;
+  min-width: 70px !important;
+  max-width: 70px !important;
+  height: auto;
+  position: absolute;
+  background-size: 70px 100% !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.topObstacle {
+  transform: rotate(180deg);
+}
+
+.ground {
+  background-image: url('https://drive.google.com/uc?export=view&id=1YOUR_GROUND_IMAGE_ID');
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  z-index: 2;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.ground.moving {
+  width: 200%;
+  animation: slideright 2s infinite linear;
+}
+
+@keyframes slideright {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ground-container {
+  height: 80px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.score-board {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+/* تحسين الاستجابة للنقاط */
+@media (max-width: 768px) {
+  .score-board {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .score-board {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.overlay div {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.overlay button {
+  background: var(--text-link);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.overlay button:hover {
+  background: var(--text-link-hover);
+  transform: translateY(-2px);
+}
+
+.overlay button:active {
+  transform: translateY(0);
+}
+
+.best-score {
+  color: #ffd700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.secondary-btn {
+  background: #666 !important;
+}
+
+.secondary-btn:hover {
+  background: #888 !important;
+}
+
+.settings-container {
+  margin: 20px 0;
+}
+
+.setting-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+  color: white;
+  font-size: 16px;
+}
+
+.slider {
+  width: 100px;
+  margin-left: 15px;
+}
+
+.checkbox {
+  margin-left: 15px;
+  transform: scale(1.2);
+}
+
+/* تحسين الأزرار */
+#restartGameBtn {
+  width: 100% !important;
+  height: 300px !important;
+  font-size: 24px !important;
+  padding: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 480px) {
+  #restartGameBtn {
+    height: 200px !important;
+    font-size: 20px !important;
+    padding: 15px !important;
+  }
+}
+
+/* تأثير النقاط */
+.score-effect {
+  position: absolute;
+  color: #ffd700;
+  font-size: 24px;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 15;
+  animation: scorePop 0.6s ease-out forwards;
+}
+
+@keyframes scorePop {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-30px);
+  }
+}
+
+]]&gt;</b:skin>
+
+</head>
+
+<body>
+<div class='container'>
+
+  &lt;!-- &#9989; الهيدر (بدون إطار/خلفية) --&gt;
+  <header>
+    <b:section class='header' id='header' showaddelement='no'>
+      <b:widget id='Header1' locked='true' title='AddOnForge (رأس الصفحة)' type='Header'>
+        <b:widget-settings>
+          <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgg9pZ-AUhOtgQse3JaKPzYZyjpPP0skMaibN_LL8oOWqwJL6tyh3GKw4jW-wC9eoqNxKgGcK09tBCYPndOX0ftCDFOEAgxhfHSvdWozCW053etkLRraAelca__tA8GyRg3vug2NlEyN0CXg_VZrKb0ze55WLYZpG7oC6vNmLcdmXnN7xcuV1BR39GVojE=s813</b:widget-setting>
+          <b:widget-setting name='displayHeight'>189</b:widget-setting>
+          <b:widget-setting name='sectionWidth'>981</b:widget-setting>
+          <b:widget-setting name='useImage'>true</b:widget-setting>
+          <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+          <b:widget-setting name='imagePlacement'>BEFORE_DESCRIPTION</b:widget-setting>
+          <b:widget-setting name='displayWidth'>813</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+
+  <b:if cond='data:useImage'>
+    &lt;b:if cond='data:imagePlacement == &quot;BEHIND&quot;'&gt;
+      &lt;!--
+      Show image as background to text. You can't really calculate the width
+      reliably in JS because margins are not taken into account by any of
+      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
+      width if the user is using shrink to fit.
+      This results in a margin-width's worth of pixels being cropped. If the
+      user is not using shrink to fit then we expand the header.
+      --&gt;
+      <b:if cond='data:mobile'>
+        <div id='header-inner'>
+          <div class='titlewrapper' style='background: transparent'>
+            <h1 class='title' style='background: transparent; border-width: 0px'>
+              <b:include name='title'/>
+            </h1>
+          </div>
+          <b:include name='description'/>
+        </div>
+      <b:else/>
+        &lt;div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                      + &quot;background-position: &quot;                      + data:backgroundPositionStyleStr + &quot;; &quot;                      + data:widthStyleStr                      + &quot;min-height: &quot; + data:height                      + &quot;_height: &quot; + data:height                      + &quot;background-repeat: no-repeat; &quot;' id='header-inner'&gt;
+          <div class='titlewrapper' style='background: transparent'>
+            <h1 class='title' style='background: transparent; border-width: 0px'>
+              <b:include name='title'/>
+            </h1>
+          </div>
+          <b:include name='description'/>
+        </div>
+      </b:if>
+    <b:else/>
+      &lt;!--Show the image only--&gt;
+      <div id='header-inner'>
+        <a expr:href='data:blog.homepageUrl' style='display: block'>
+          &lt;img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/&gt;
+        </a>
+        &lt;!--Show the description--&gt;
+        &lt;b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'&gt;
+          <b:include name='description'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    &lt;!--No header image --&gt;
+    <div id='header-inner'>
+      <div class='titlewrapper'>
+        <h1 class='title'>
+          <b:include name='title'/>
+        </h1>
+      </div>
+      <b:include name='description'/>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
+  </div>
+</b:includable>
+        <b:includable id='title'>
+  <b:tag cond='data:blog.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+    <data:title/>
+  </b:tag>
+</b:includable>
+      </b:widget>
+    </b:section>
+  </header>
+
+  &lt;!-- &#9989; الناف بار --&gt;
+  <nav class='frame-box'>
+    <ul>
+      <li><a class='nav-btn' expr:href='data:blog.homepageUrl'>الصفحة الرئيسية</a></li>
+      <li><a class='nav-btn' href='/search/label/المقالات'>المقالات</a></li>
+      <li><a class='nav-btn' href='/search/label/إضافات'>الإضافات</a></li>
+      <li><a class='nav-btn' href='/search/label/العاب'>الالعاب</a></li>
+    </ul>
+    <div class='menu-right'>
+      <a class='social-icon' href='https://x.com/addonforge'><img src='https://lh3.googleusercontent.com/pw/AP1GczOzA7SNAki4bKW3WEq_QqIJlahoOnBhbtHnyVtnoGXD1z6cyyAI7_pmkxTMbZjSPNMtv9KkhzdbzplmV0MT7_7fIJr3W677-PuHNc9QHc0BjwqumLGf80cJLVAwHB5SgrQbnYx-SuEhYAQHNDFlNY2m=w353-h348-s-no-gm?authuser=0'/></a>
+      <a class='social-icon' href='#'><img src='https://lh3.googleusercontent.com/pw/AP1GczMg_cioUETMEMDe_z8z293M9bfRiH5DSp2zfq-in8T24CogMjkPSXT9Blv19o6YWkdZOPPmS1PYhe5WP7I8RjrZz0l6Xvaq5uiHh_5F3zjRXi76VbBEn5iVvOfJeO2wG2pXp7HXAhrRfkJGRGBwraVe=w354-h348-s-no-gm?authuser=0'/></a>
+      <a class='social-icon' href='#'><img src='https://lh3.googleusercontent.com/pw/AP1GczPD33ErZqyq1tG2myobkfy76vxj_DDfXl59huss9Q_1_Y1nsz56CtSulvMOcQOkcDTUvW2FIRbDNgnLRBVCReu1X7tqN3XlTQ5rpe519eG77wok0h2idOMFSSW331Un-QdYxTfjcpOcvDqmJRc8zWN9=w329-h328-s-no-gm?authuser=0'/></a>
+      <a class='social-icon' href='#'><img src='https://lh3.googleusercontent.com/pw/AP1GczMWuGjNPJc-6YDcEnJnNeeQLTXc5R0aQMg7ZtpPVAixaAZig20RI5cpNjTfatrW5EdD6zrXnOxrn9MVzDrPQ16lQS2YuPfIEpKa8Kcr5__q3fWAXALIYmXTMTeReEe5DkxwrkwdjzdVo_FAeIzbQABD=w325-h326-s-no-gm?authuser=0'/></a>
+    </div>
+  </nav>
+
+<b:section class='chart-ads' id='chart-ads' maxwidgets='1' name='إعلان فوق الشارت' showaddelement='yes'>
+  <b:widget id='BlogSearch1' locked='false' title='بــحــث' type='BlogSearch' version='1'>
+    <b:includable id='main'>
+    &lt;!-- only display title if it's non-empty --&gt;
+    &lt;b:if cond='data:title != &quot;&quot;'&gt;
+      <h2 class='title'><data:title/></h2>
+    </b:if>
+
+    <div class='widget-content'>
+      &lt;div expr:id='data:widget.instanceId + &quot;_form&quot;'&gt;
+        &lt;form class='gsc-search-box' expr:action='data:blog.searchUrl'&gt;
+          <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+          &lt;table cellpadding='0' cellspacing='0' class='gsc-search-box'&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td class='gsc-input'&gt;
+                  &lt;input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q' size='30' title='search' type='text'/&gt;
+                &lt;/td&gt;
+                &lt;td class='gsc-search-button'&gt;
+                  &lt;input class='gsc-search-button' expr:value='data:messages.search' title='search' type='submit'/&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/form&gt;
+      </div>
+    </div>
+
+    <b:include name='quickedit'/>
+  </b:includable>
+  </b:widget>
+</b:section>
+
+  
+  &lt;!-- &#9989; الشارت (فقط الرئيسية) --&gt;
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <div class='frame-box' style='text-align:center;'>
+      <div id='tradingview_chart'/>
+      <script src='https://s3.tradingview.com/tv.js' type='text/javascript'/>
+      <script type='text/javascript'>
+        new TradingView.widget({
+          &quot;width&quot;: &quot;100%&quot;,
+          &quot;height&quot;: 500,
+          &quot;symbol&quot;: &quot;BITSTAMP:BTCUSD&quot;,
+          &quot;interval&quot;: &quot;60&quot;,
+          &quot;timezone&quot;: &quot;Etc/UTC&quot;,
+          &quot;theme&quot;: &quot;dark&quot;,
+          &quot;style&quot;: &quot;1&quot;,
+          &quot;locale&quot;: &quot;ar&quot;,
+          &quot;container_id&quot;: &quot;tradingview_chart&quot;
+        });
+      </script>
+    </div>
+    
+    &lt;!-- لعبة Flappy Bird --&gt;
+    <div class='frame-box' style='text-align:center;'>
+      <h3 style='color: var(--text-main); margin-bottom: 20px;'>🐤 لعبة Flappy Bird</h3>
+      <div class='game-container' style='margin: 0 auto;'>
+        <div class='score-board' id='score'>Score: 0</div>
+        <div class='sky'>
+          <div class='bird'/>
+        </div>
+        <div class='ground-container'>
+          <div class='ground'/>
+        </div>
+
+        &lt;!-- شاشة البداية --&gt;
+        <div aria-labelledby='game-title' class='overlay' id='startScreen' role='dialog'>
+          <div id='game-title'>🐤 Flappy Bird</div>
+          <div aria-live='polite' class='best-score' id='bestScore'>Best Score: 0</div>
+          &lt;button aria-describedby='game-title' id='startGameBtn'&gt;ابدأ اللعبة&lt;/button&gt;
+          &lt;button aria-describedby='game-title' class='secondary-btn' id='settingsBtn'&gt;&#9881;&#65039; إعدادات&lt;/button&gt;
+        </div>
+
+        &lt;!-- شاشة Game Over --&gt;
+        <div aria-labelledby='final-score' class='overlay' id='gameOverScreen' role='dialog' style='display:none;'>
+          <div aria-live='assertive' id='finalScore'>Game Over 😢&lt;br/&gt;Score: 0</div>
+          &lt;button aria-describedby='final-score' id='restartGameBtn'&gt;🔄 إعادة اللعب&lt;/button&gt;
+          &lt;button aria-describedby='final-score' class='secondary-btn' id='mainMenuBtn'&gt;🏠 القائمة الرئيسية&lt;/button&gt;
+        </div>
+
+        &lt;!-- شاشة الإعدادات --&gt;
+        <div aria-labelledby='settings-title' class='overlay' id='settingsScreen' role='dialog' style='display:none;'>
+          <div id='settings-title'>&#9881;&#65039; الإعدادات</div>
+          <div class='settings-container'>
+            &lt;label class='setting-label' for='difficultySlider'&gt;
+              &lt;input aria-label='مستوى الصعوبة' class='slider' id='difficultySlider' max='3' min='1' type='range' value='2'/&gt;
+              الصعوبة: <span aria-live='polite' id='difficultyText'>متوسطة</span>
+            &lt;/label&gt;
+            &lt;label class='setting-label' for='soundToggle'&gt;
+              &lt;input aria-label='تشغيل الأصوات' checked='checked' class='checkbox' id='soundToggle' type='checkbox'/&gt;
+              الأصوات
+            &lt;/label&gt;
+            &lt;label class='setting-label' for='effectsToggle'&gt;
+              &lt;input aria-label='التأثيرات البصرية' checked='checked' class='checkbox' id='effectsToggle' type='checkbox'/&gt;
+              التأثيرات البصرية
+            &lt;/label&gt;
+          </div>
+          &lt;button aria-describedby='settings-title' id='saveSettingsBtn'&gt;💾 حفظ&lt;/button&gt;
+          &lt;button aria-describedby='settings-title' class='secondary-btn' id='backBtn'&gt;🔙 رجوع&lt;/button&gt;
+        </div>
+      </div>
+    </div>
+    
+    &lt;!-- JavaScript الخاص بلعبة Flappy Bird --&gt;
+    <script type='text/javascript'>
+      // ===== نظام Flappy Bird الاحترافي - دقة عالية جدا&#1611; =====
+      
+      // متغيرات اللعبة الأساسية
+      let bird, gameDisplay, ground, scoreBoard, startScreen, gameOverScreen, finalScore, settingsScreen, bestScoreDisplay
+      let birdLeft, birdBottom, gravity, isGameOver, gap, score, gameTimerId, gameSpeed
+      
+      // إعدادات اللعبة
+      let gameSettings = {
+        difficulty: 2, // 1: سهل&#1548; 2: متوسط&#1548; 3: صعب
+        soundEnabled: true,
+        effectsEnabled: true
+      }
+      
+      // تهيئة الأصوات مع AudioContext واحد
+      let gameSounds = {
+        audioContext: null,
+        init: function() {
+          if (gameSettings.soundEnabled) {
+            try {
+              // إنشاء AudioContext واحد فقط
+              this.audioContext = new (window.AudioContext || window.webkitAudioContext)()
+            } catch (error) {
+              console.warn('لا يمكن تهيئة الأصوات:', error)
+            }
+          }
+        },
+        createTone: function(frequency, duration, type) {
+          if (!this.audioContext) return
+          
+          const oscillator = this.audioContext.createOscillator()
+          const gainNode = this.audioContext.createGain()
+          
+          oscillator.connect(gainNode)
+          gainNode.connect(this.audioContext.destination)
+          
+          oscillator.frequency.value = frequency
+          oscillator.type = type
+          gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime)
+          gainNode.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + duration)
+          
+          oscillator.start(this.audioContext.currentTime)
+          oscillator.stop(this.audioContext.currentTime + duration)
+        },
+        playJump: function() {
+          if (gameSettings.soundEnabled &amp;&amp; this.audioContext) {
+            this.createTone(440, 0.1, 'sine')
+          }
+        },
+        playHit: function() {
+          if (gameSettings.soundEnabled &amp;&amp; this.audioContext) {
+            this.createTone(200, 0.3, 'sawtooth')
+          }
+        },
+        playPoint: function() {
+          if (gameSettings.soundEnabled &amp;&amp; this.audioContext) {
+            this.createTone(880, 0.15, 'square')
+          }
+        }
+      }
+      
+      // مصفوفة العقبات النشطة
+      let activeObstacles = []
+      let generateObstacleTimeout = null
+      
+      // تهيئة متغيرات اللعبة
+      function initGameVars() {
+        birdLeft = 150
+        birdBottom = 250
+        gravity = 0.6
+        isGameOver = false
+        score = 0
+        gameSpeed = 2
+        gap = 120
+        gameTimerId = null
+        activeObstacles = []
+        
+        // تطبيق إعدادات الصعوبة
+        switch(gameSettings.difficulty) {
+          case 1: // سهل
+            gap = 150
+            gameSpeed = 1.5
+            break
+          case 2: // متوسط
+            gap = 120
+            gameSpeed = 2
+            break
+          case 3: // صعب
+            gap = 100
+            gameSpeed = 2.5
+            break
+        }
+      }
+      
+      // تهيئة DOM
+      document.addEventListener('DOMContentLoaded', function() {
+        bird = document.querySelector('.bird')
+        gameDisplay = document.querySelector('.game-container')
+        ground = document.querySelector('.ground')
+        scoreBoard = document.querySelector('#score')
+        startScreen = document.querySelector('#startScreen')
+        gameOverScreen = document.querySelector('#gameOverScreen')
+        finalScore = document.querySelector('#finalScore')
+        settingsScreen = document.querySelector('#settingsScreen')
+        bestScoreDisplay = document.querySelector('#bestScore')
+        
+        if (bird) {
+          bird.style.left = birdLeft + 'px'
+          bird.style.bottom = birdBottom + 'px'
+        }
+        
+        // تهيئة الأصوات
+        gameSounds.init()
+        
+        // تحميل الإعدادات المحفوظة
+        loadSettings()
+        
+        // إعداد مستمعي الأحداث
+        setupButtonListeners()
+        
+        // تهيئة متغيرات اللعبة
+        initGameVars()
+        
+        // إظهار أفضل نتيجة
+        updateBestScoreDisplay()
+      })
+      
+      // إعداد مستمعي الأحداث
+      function setupButtonListeners() {
+        // تنظيف Event Listeners القديمة
+        removeAllEventListeners()
+        
+        // زر بدء اللعبة
+        const startGameBtn = document.getElementById('startGameBtn')
+        addEventListenerSafe(startGameBtn, 'click', startGame)
+        
+        // زر الإعدادات
+        const settingsBtn = document.getElementById('settingsBtn')
+        addEventListenerSafe(settingsBtn, 'click', toggleSettings)
+        
+        // زر إعادة اللعب
+        const restartGameBtn = document.getElementById('restartGameBtn')
+        if (restartGameBtn) {
+          console.log('&#9989; تم العثور على زر إعادة اللعب')
+          addEventListenerSafe(restartGameBtn, 'click', restartGame)
+        } else {
+          console.error('❌ لم يتم العثور على زر إعادة اللعب')
+        }
+        
+        // زر القائمة الرئيسية
+        const mainMenuBtn = document.getElementById('mainMenuBtn')
+        if (mainMenuBtn) {
+          console.log('&#9989; تم العثور على زر القائمة الرئيسية')
+          addEventListenerSafe(mainMenuBtn, 'click', showMainMenu)
+        } else {
+          console.error('❌ لم يتم العثور على زر القائمة الرئيسية')
+        }
+        
+        // زر حفظ الإعدادات
+        const saveSettingsBtn = document.getElementById('saveSettingsBtn')
+        addEventListenerSafe(saveSettingsBtn, 'click', saveSettings)
+        
+        // زر الرجوع
+        const backBtn = document.getElementById('backBtn')
+        addEventListenerSafe(backBtn, 'click', showMainMenu)
+      }
+      
+      // إضافة مستمع حدث آمن
+      function addEventListenerSafe(element, event, handler) {
+        if (element) {
+          element.addEventListener(event, handler)
+        }
+      }
+      
+      // إزالة جميع مستمعي الأحداث
+      function removeAllEventListeners() {
+        document.removeEventListener('keydown', control)
+        document.removeEventListener('click', handleClick)
+        document.removeEventListener('touchstart', handleTouch)
+      }
+      
+      // بدء اللعبة
+      function startGame() {
+        if (!gameDisplay || !startScreen) return
+        
+        console.log('🎮 بدء اللعبة...')
+        
+        // إخفاء شاشة البداية
+        startScreen.style.display = 'none'
+        
+        // إظهار شاشة اللعبة
+        gameDisplay.style.display = 'block'
+        
+        // إعادة تشغيل حركة الأرض
+        if (ground) {
+          ground.classList.add('moving')
+        }
+        
+        // إضافة مستمعي الأحداث
+        document.addEventListener('keydown', control)
+        document.addEventListener('click', handleClick)
+        document.addEventListener('touchstart', handleTouch)
+        
+        // بدء حلقة اللعبة
+        gameLoop()
+        
+        // بدء توليد العقبات
+        generateObstacle()
+        
+        // إخفاء تلميح التحكم
+        hideControlsHint()
+      }
+      
+      // حلقة اللعبة الرئيسية
+      function gameLoop() {
+        if (isGameOver) return
+        
+        // تطبيق الجاذبية
+        birdBottom -= gravity
+        if (bird) {
+          bird.style.bottom = birdBottom + 'px'
+        }
+        
+        // تحريك العقبات
+        moveObstacles()
+        
+        // فحص التصادم
+        checkAllCollisions()
+        
+        // تحديث النتيجة
+        updateScore()
+        
+        // متابعة الحلقة
+        gameTimerId = setTimeout(gameLoop, 20)
+      }
+      
+      // توليد عقبة جديدة
+      function generateObstacle() {
+        if (isGameOver || !gameDisplay) return
+        
+        const gameHeight = gameDisplay.offsetHeight
+        const groundHeight = 80
+        const minHeight = 50
+        const maxHeight = gameHeight - groundHeight - gap - minHeight
+        
+        const obstacleHeight = Math.random() * (maxHeight - minHeight) + minHeight
+        const topObstacleHeight = gameHeight - groundHeight - obstacleHeight - gap
+        
+        // إنشاء العقبة السفلية
+        const obstacle = document.createElement('div')
+        obstacle.className = 'obstacle'
+        obstacle.style.left = gameDisplay.offsetWidth + 'px'
+        obstacle.style.bottom = '0px'
+        obstacle.style.height = obstacleHeight + 'px'
+        obstacle.style.width = '70px'
+        obstacle.style.minWidth = '70px'
+        obstacle.style.maxWidth = '70px'
+        
+        // إنشاء العقبة العلوية
+        const topObstacle = document.createElement('div')
+        topObstacle.className = 'topObstacle'
+        topObstacle.style.left = gameDisplay.offsetWidth + 'px'
+        topObstacle.style.top = '0px'
+        topObstacle.style.bottom = 'auto'
+        topObstacle.style.height = topObstacleHeight + 'px'
+        topObstacle.style.width = '70px'
+        topObstacle.style.minWidth = '70px'
+        topObstacle.style.maxWidth = '70px'
+        
+        gameDisplay.appendChild(obstacle)
+        gameDisplay.appendChild(topObstacle)
+        
+        // إضافة العقبة إلى المصفوفة النشطة
+        const obstacleData = {
+          element: obstacle,
+          topElement: topObstacle,
+          left: gameDisplay.offsetWidth,
+          bottomHeight: obstacleHeight,
+          topHeight: topObstacleHeight,
+          passed: false,
+          timerId: null
+        }
+        
+        activeObstacles.push(obstacleData)
+        
+        // تحديد العقبة التالية
+        const nextDelay = Math.max(1500 - (score * 20), 800)
+        generateObstacleTimeout = setTimeout(generateObstacle, nextDelay)
+      }
+      
+      // تحريك العقبات
+      function moveObstacles() {
+        activeObstacles.forEach(obstacleData =&gt; {
+          obstacleData.left -= gameSpeed
+          
+          if (obstacleData.element) {
+            obstacleData.element.style.left = obstacleData.left + 'px'
+          }
+          if (obstacleData.topElement) {
+            obstacleData.topElement.style.left = obstacleData.left + 'px'
+          }
+          
+          // إزالة العقبات التي خرجت من الشاشة
+          if (obstacleData.left &lt; -70) {
+            if (obstacleData.element) obstacleData.element.remove()
+            if (obstacleData.topElement) obstacleData.topElement.remove()
+            
+            // إزالة من المصفوفة
+            const index = activeObstacles.indexOf(obstacleData)
+            if (index &gt; -1) {
+              activeObstacles.splice(index, 1)
+            }
+          }
+        })
+      }
+      
+      // فحص جميع التصادمات
+      function checkAllCollisions() {
+        if (!bird || !gameDisplay) return
+        
+        const birdRect = bird.getBoundingClientRect()
+        const gameRect = gameDisplay.getBoundingClientRect()
+        
+        // تحويل الإحداثيات النسبية
+        const birdLeft = birdRect.left - gameRect.left
+        const birdTop = birdRect.top - gameRect.top
+        const birdRight = birdRect.right - gameRect.left
+        const birdBottom = birdRect.bottom - gameRect.top
+        
+        // فحص التصادم مع العقبات
+        activeObstacles.forEach(obstacleData =&gt; {
+          if (!obstacleData.element || !obstacleData.topElement) return
+          
+          const obstacleRect = obstacleData.element.getBoundingClientRect()
+          const topObstacleRect = obstacleData.topElement.getBoundingClientRect()
+          
+          // تحويل إحداثيات العقبات
+          const obstacleLeft = obstacleRect.left - gameRect.left
+          const obstacleRight = obstacleRect.right - gameRect.left
+          const obstacleTop = obstacleRect.top - gameRect.top
+          const obstacleBottom = obstacleRect.bottom - gameRect.top
+          
+          const topObstacleLeft = topObstacleRect.left - gameRect.left
+          const topObstacleRight = topObstacleRect.right - gameRect.left
+          const topObstacleTop = topObstacleRect.top - gameRect.top
+          const topObstacleBottom = topObstacleRect.bottom - gameRect.top
+          
+          // فحص التصادم الأفقي
+          const horizontalOverlap = birdRight &gt; obstacleLeft &amp;&amp; birdLeft &lt; obstacleRight
+          
+          if (horizontalOverlap) {
+            // فحص التصادم مع العقبة السفلية
+            if (birdBottom &gt; obstacleTop) {
+              gameOver()
+              return
+            }
+            
+            // فحص التصادم مع العقبة العلوية
+            if (birdTop &lt; topObstacleBottom) {
+              gameOver()
+              return
+            }
+          }
+        })
+        
+        // فحص التصادم مع الأرض
+        if (birdBottom &lt;= 0) {
+          gameOver()
+        }
+        
+        // فحص التصادم مع السقف
+        if (birdTop &lt;= 0) {
+          gameOver()
+        }
+      }
+      
+      // تحديث النتيجة
+      function updateScore() {
+        activeObstacles.forEach(obstacleData =&gt; {
+          if (!obstacleData.passed &amp;&amp; obstacleData.left + 70 &lt; birdLeft) {
+            obstacleData.passed = true
+            score++
+            
+            if (scoreBoard) {
+              scoreBoard.textContent = 'Score: ' + score
+            }
+            
+            // تشغيل صوت النقطة
+            gameSounds.playPoint()
+            
+            // إظهار تأثير النقطة
+            if (gameSettings.effectsEnabled) {
+              showScoreEffect()
+            }
+            
+            // زيادة الصعوبة تدريجيا&#1611;
+            if (score % 15 === 0) {
+              gameSpeed += 0.03
+              if (gap &gt; 100) gap -= 1
+            }
+          }
+        })
+      }
+      
+      // إظهار تأثير النقطة
+      let scoreEffectElement = null
+      function showScoreEffect() {
+        if (!gameDisplay) return
+        
+        // إعادة استخدام العنصر إذا كان موجودا&#1611;
+        if (!scoreEffectElement) {
+          scoreEffectElement = document.createElement('div')
+          scoreEffectElement.className = 'score-effect'
+          gameDisplay.appendChild(scoreEffectElement)
+        }
+        
+        scoreEffectElement.textContent = '+1'
+        scoreEffectElement.style.left = '50%'
+        scoreEffectElement.style.top = '30%'
+        scoreEffectElement.style.transform = 'translateX(-50%)'
+        
+        // إعادة تشغيل الرسوم المتحركة
+        scoreEffectElement.style.animation = 'none'
+        scoreEffectElement.offsetHeight // إجبار إعادة الرسم
+        scoreEffectElement.style.animation = 'scorePop 0.6s ease-out forwards'
+      }
+      
+      // التحكم بالطائر
+      let lastJumpTime = 0
+      const jumpCooldown = 100 // 100ms cooldown
+      
+      function jump() {
+        const now = Date.now()
+        if (now - lastJumpTime &lt; jumpCooldown) return
+        
+        lastJumpTime = now
+        
+        if (isGameOver) return
+        
+        birdBottom += 50
+        if (bird) {
+          bird.style.bottom = birdBottom + 'px'
+          
+          // إضافة تأثير القفزة
+          if (gameSettings.effectsEnabled) {
+            bird.classList.add('jumping')
+            setTimeout(() =&gt; {
+              bird.classList.remove('jumping')
+            }, 100)
+          }
+        }
+        
+        // تشغيل صوت القفزة
+        gameSounds.playJump()
+        
+        // إخفاء تلميح التحكم
+        hideControlsHint()
+      }
+      
+      // معالج الأحداث
+      function control(e) {
+        if (e.code === 'Space') {
+          e.preventDefault()
+          jump()
+        }
+      }
+      
+      function handleClick(e) {
+        e.preventDefault()
+        jump()
+      }
+      
+      function handleTouch(e) {
+        e.preventDefault()
+        e.stopPropagation()
+        jump()
+      }
+      
+      // إخفاء تلميح التحكم
+      function hideControlsHint() {
+        // إخفاء أي تلميح موجود
+      }
+      
+      // انتهاء اللعبة
+      function gameOver() {
+        if (isGameOver) return
+        
+        console.log('💥 انتهاء اللعبة')
+        isGameOver = true
+        
+        // إيقاف جميع المؤقتات
+        if (gameTimerId) {
+          clearTimeout(gameTimerId)
+          gameTimerId = null
+        }
+        
+        if (generateObstacleTimeout) {
+          clearTimeout(generateObstacleTimeout)
+          generateObstacleTimeout = null
+        }
+        
+        // إيقاف حركة الأرض
+        if (ground) {
+          ground.classList.remove('moving')
+        }
+        
+        // تشغيل صوت الاصطدام
+        gameSounds.playHit()
+        
+        // تحديث أفضل نتيجة
+        updateBestScore()
+        
+        // إظهار شاشة Game Over
+        if (gameOverScreen &amp;&amp; finalScore) {
+          const isNewRecord = score &gt; getBestScore()
+          finalScore.innerHTML = `
+            <div style='font-size: 28px; margin-bottom: 15px;'>Game Over 😢</div>
+            <div style='font-size: 24px; margin-bottom: 10px;'>Score: ${score}</div>
+            ${isNewRecord ? '<div style='color: #ffd700; font-size: 20px;'>🎉 New Record!</div>' : ''}
+          `
+          gameOverScreen.style.display = 'flex'
+        }
+        
+        // إزالة مستمعي الأحداث
+        removeAllEventListeners()
+      }
+      
+      // إعادة تشغيل اللعبة
+      function restartGame() {
+        console.log('🔄 تم استدعاء restartGame')
+        
+        // التأكد من تهيئة المتغيرات
+        if (!gameDisplay || !gameOverScreen) {
+          console.error('لم يتم تهيئة المتغيرات بشكل صحيح')
+          return
+        }
+        
+        console.log('🎮 بدء إعادة تشغيل اللعبة...')
+        
+        // إيقاف جميع المؤقتات
+        if (gameTimerId) {
+          clearTimeout(gameTimerId)
+          gameTimerId = null
+        }
+        
+        // إيقاف جميع مؤقتات العقبات النشطة
+        activeObstacles.forEach(obstacle =&gt; {
+          if (obstacle.timerId) {
+            clearTimeout(obstacle.timerId)
+          }
+        })
+        
+        // إلغاء setTimeout لتجنب تسريبات الذاكرة
+        if (generateObstacleTimeout) {
+          clearTimeout(generateObstacleTimeout)
+          generateObstacleTimeout = null
+        }
+        
+        // إعادة تعيين جميع المؤقتات
+        gameTimerId = null
+        
+        // إزالة جميع مستمعي الأحداث قبل إعادة التشغيل
+        document.removeEventListener('keydown', control)
+        document.removeEventListener('click', handleClick)
+        document.removeEventListener('touchstart', handleTouch)
+        
+        // إزالة جميع العقبات الموجودة
+        const obstacles = document.querySelectorAll('.obstacle, .topObstacle')
+        obstacles.forEach(obstacle =&gt; obstacle.remove())
+        
+        // إعادة تعيين مصفوفة العقبات النشطة
+        activeObstacles = []
+        
+        // إعادة تعيين المتغيرات
+        isGameOver = false
+        score = 0
+        
+        // إعادة تعيين موضع الطائر والعناصر البصرية
+        if (bird) {
+          birdLeft = 150
+          birdBottom = 250
+          bird.style.left = birdLeft + 'px'
+          bird.style.bottom = birdBottom + 'px'
+          
+          // إزالة جميع التأثيرات البصرية
+          if (gameSettings.effectsEnabled) {
+            bird.classList.remove('jumping', 'falling')
+          }
+        }
+        
+        // إعادة تعيين النتيجة
+        if (scoreBoard) {
+          scoreBoard.textContent = 'Score: 0'
+        }
+        
+        // إخفاء شاشة Game Over
+        if (gameOverScreen) {
+          gameOverScreen.style.display = 'none'
+        }
+        
+        // التأكد من إعادة تشغيل حركة الأرض
+        if (ground) {
+          ground.classList.add('moving')
+        }
+        
+        // إعادة تشغيل اللعبة
+        console.log('🚀 بدء اللعبة الجديدة...')
+        startGame()
+        
+        console.log('&#9989; تم إعادة تشغيل اللعبة بنجاح')
+      }
+      
+      // إظهار القائمة الرئيسية
+      function showMainMenu() {
+        console.log('🏠 تم استدعاء showMainMenu')
+        
+        // إيقاف اللعبة إذا كانت تعمل
+        if (gameTimerId) {
+          clearTimeout(gameTimerId)
+          gameTimerId = null
+        }
+        
+        // إعادة تعيين حالة اللعبة
+        isGameOver = false
+        
+        // إخفاء جميع الشاشات
+        if (gameOverScreen) {
+          gameOverScreen.style.display = 'none'
+          console.log('📺 تم إخفاء شاشة Game Over')
+        }
+        if (settingsScreen) {
+          settingsScreen.style.display = 'none'
+          console.log('&#9881;&#65039; تم إخفاء شاشة الإعدادات')
+        }
+        
+        // إظهار شاشة البداية
+        if (startScreen) {
+          startScreen.style.display = 'flex'
+          console.log('🎮 تم إظهار شاشة البداية')
+        } else {
+          console.error('❌ لم يتم العثور على شاشة البداية')
+        }
+        
+        // تحديث أفضل نتيجة
+        updateBestScoreDisplay()
+        
+        // إعادة تهيئة متغيرات اللعبة
+        initGameVars()
+      }
+      
+      // تبديل الإعدادات
+      function toggleSettings() {
+        if (startScreen) startScreen.style.display = 'none'
+        if (settingsScreen) settingsScreen.style.display = 'flex'
+        
+        // تحديث قيم الإعدادات
+        updateSettingsDisplay()
+      }
+      
+      // تحديث عرض الإعدادات
+      function updateSettingsDisplay() {
+        const difficultySlider = document.getElementById('difficultySlider')
+        const difficultyText = document.getElementById('difficultyText')
+        const soundToggle = document.getElementById('soundToggle')
+        const effectsToggle = document.getElementById('effectsToggle')
+        
+        if (difficultySlider) difficultySlider.value = gameSettings.difficulty
+        if (soundToggle) soundToggle.checked = gameSettings.soundEnabled
+        if (effectsToggle) effectsToggle.checked = gameSettings.effectsEnabled
+        
+        if (difficultyText) {
+          const difficultyNames = ['', 'سهل', 'متوسط', 'صعب']
+          difficultyText.textContent = difficultyNames[gameSettings.difficulty]
+        }
+      }
+      
+      // حفظ الإعدادات
+      function saveSettings() {
+        const difficultySlider = document.getElementById('difficultySlider')
+        const soundToggle = document.getElementById('soundToggle')
+        const effectsToggle = document.getElementById('effectsToggle')
+        
+        if (difficultySlider) gameSettings.difficulty = parseInt(difficultySlider.value)
+        if (soundToggle) gameSettings.soundEnabled = soundToggle.checked
+        if (effectsToggle) gameSettings.effectsEnabled = effectsToggle.checked
+        
+        // حفظ في localStorage
+        try {
+          localStorage.setItem('flappyBirdSettings', JSON.stringify(gameSettings))
+        } catch (error) {
+          console.warn('لا يمكن حفظ الإعدادات:', error)
+        }
+        
+        // العودة للقائمة الرئيسية
+        showMainMenu()
+      }
+      
+      // تحميل الإعدادات
+      function loadSettings() {
+        try {
+          const savedSettings = localStorage.getItem('flappyBirdSettings')
+          if (savedSettings) {
+            const parsed = JSON.parse(savedSettings)
+            gameSettings = { ...gameSettings, ...parsed }
+          }
+        } catch (error) {
+          console.warn('لا يمكن تحميل الإعدادات:', error)
+        }
+      }
+      
+      // تحديث أفضل نتيجة
+      function updateBestScore() {
+        const currentBest = getBestScore()
+        if (score &gt; currentBest) {
+          try {
+            localStorage.setItem('flappyBirdBestScore', score.toString())
+          } catch (error) {
+            console.warn('لا يمكن حفظ أفضل نتيجة:', error)
+          }
+        }
+      }
+      
+      // الحصول على أفضل نتيجة
+      function getBestScore() {
+        try {
+          const best = localStorage.getItem('flappyBirdBestScore')
+          return best ? parseInt(best) : 0
+        } catch (error) {
+          console.warn('لا يمكن قراءة أفضل نتيجة:', error)
+          return 0
+        }
+      }
+      
+      // تحديث عرض أفضل نتيجة
+      function updateBestScoreDisplay() {
+        if (bestScoreDisplay) {
+          const best = getBestScore()
+          bestScoreDisplay.textContent = 'Best Score: ' + best
+        }
+      }
+    </script>
+  </b:if>
+
+
+
+  &lt;!-- &#9989; المقالات داخل إطار --&gt;
+  <div class='frame-box'>
+    <b:section class='main' id='main' showaddelement='yes'>
+      <b:widget id='Blog1' locked='true' title='رسائل المدونة الإلكترونية' type='Blog' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+          <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+          <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+          <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showAuthor'>true</b:widget-setting>
+          <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+          <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='reactionsLabel'/>
+          <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+          <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+          <b:widget-setting name='showLabels'>true</b:widget-setting>
+          <b:widget-setting name='showLocation'>true</b:widget-setting>
+          <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+          <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+          <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+          <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+          <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='top'>
+  <b:if cond='!data:mobile'>
+    &lt;!-- posts --&gt;
+    <div class='blog-posts hfeed'>
+
+      <b:include data='top' name='status-message'/>
+
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.isDateStart and not data:post.isFirstPost'>
+          </div></div>
+        </b:if>
+        <b:if cond='data:post.isDateStart'>
+          &lt;div class=&quot;date-outer&quot;&gt;
+        </b:if>
+        <b:if cond='data:post.dateHeader'>
+          <h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+        </b:if>
+        <b:if cond='data:post.isDateStart'>
+          &lt;div class=&quot;date-posts&quot;&gt;
+        </b:if>
+        <div class='post-outer'>
+          <b:include data='post' name='post'/>
+          &lt;b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/&gt;
+        </div>
+
+        &lt;!-- Ad --&gt;
+        <b:if cond='data:post.includeAd'>
+          <div class='inline-ad'>
+            <data:adCode/>
+          </div>
+        </b:if>
+      </b:loop>
+      <b:if cond='data:numPosts != 0'>
+        </div></div>
+      </b:if>
+    </div>
+
+    &lt;!-- navigation --&gt;
+    <b:include name='nextprev'/>
+
+    &lt;!-- feed links --&gt;
+    <b:include name='feedLinks'/>
+
+  <b:else/>
+    <b:include name='mobile-main'/>
+  </b:if>
+</b:includable>
+        <b:includable id='backlinkDeleteIcon' var='backlink'/>
+        <b:includable id='backlinks' var='post'/>
+        <b:includable id='comment-form' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <b:if cond='data:mobile'>
+      <h4 id='comment-post-message'>
+        &lt;a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'&gt;<data:postCommentMsg/></a></h4>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      &lt;iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/&gt;
+    <b:else/>
+      <h4 id='comment-post-message'><data:postCommentMsg/></h4>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      &lt;iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/&gt;
+    </b:if>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe('<data:post.appRpcRelayPath/>');
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='commentDeleteIcon' var='comment'>
+  &lt;span expr:class='&quot;item-control &quot; + data:comment.adminClass'&gt;
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:top.deleteCommentMsg'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+        <b:includable id='comment_count_picker' var='post'>
+  <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
+    <data:post.commentLabelFull/>:
+  </a>
+</b:includable>
+        <b:includable id='comment_picker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threaded_comments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+        <b:includable id='comments' var='post'>
+  <div class='comments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+      <h4><data:post.commentLabelFull/>:</h4>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <span class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:post.oldestLinkText/></a>
+              &#160;
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'><data:post.olderLinkText/></a>
+              &#160;
+          </b:if>
+
+          <data:post.commentRangeText/>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            &#160;
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'><data:post.newerLinkText/></a>
+            &#160;
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:post.newestLinkText/></a>
+          </b:if>
+        </span>
+      </b:if>
+
+      &lt;div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'&gt;
+        &lt;dl expr:class='data:post.avatarIndentClass' id='comments-block'&gt;
+          <b:loop values='data:post.comments' var='comment'>
+            &lt;dt expr:class='&quot;comment-author &quot; + data:comment.authorClass' expr:id='data:comment.anchorName'&gt;
+              <b:if cond='data:comment.favicon'>
+                <img expr:src='data:comment.favicon' height='16px' style='margin-bottom:-2px;' width='16px'/>
+              </b:if>
+              <a expr:name='data:comment.anchorName'/>
+              <b:if cond='data:blog.enabledCommentProfileImages'>
+                <data:comment.authorAvatarImage/>
+              </b:if>
+              <b:if cond='data:comment.authorUrl'>
+                <a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a>
+              <b:else/>
+                <data:comment.author/>
+              </b:if>
+              <data:commentPostedByMsg/>
+            &lt;/dt&gt;
+            &lt;dd class='comment-body' expr:id='data:widget.instanceId + data:comment.cmtBodyIdPostfix'&gt;
+              <b:if cond='data:comment.isDeleted'>
+                <span class='deleted-comment'><data:comment.body/></span>
+              <b:else/>
+                <p>
+                  <data:comment.body/>
+                </p>
+              </b:if>
+            &lt;/dd&gt;
+            &lt;dd class='comment-footer'&gt;
+              <span class='comment-timestamp'>
+                <a expr:href='data:comment.url' title='comment permalink'>
+                  <data:comment.timestamp/>
+                </a>
+                <b:include data='comment' name='commentDeleteIcon'/>
+              </span>
+            &lt;/dd&gt;
+          </b:loop>
+        &lt;/dl&gt;
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <span class='paging-control-container'>
+          <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+            <data:post.oldestLinkText/>
+          </a>
+          <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+            <data:post.olderLinkText/>
+          </a>
+          &#160;
+          <data:post.commentRangeText/>
+          &#160;
+          <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+            <data:post.newerLinkText/>
+          </a>
+          <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+            <data:post.newestLinkText/>
+          </a>
+        </span>
+      </b:if>
+
+      <p class='comment-footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='comment-form'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:elseif cond='data:post.allowComments'/>
+          <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
+        </b:if>
+      </p>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        &lt;iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'&gt;
+        &lt;/iframe&gt;
+      </div>
+    </b:if>
+
+  </div>
+</b:includable>
+        <b:includable id='feedLinks'>
+  &lt;b:if cond='data:blog.pageType != &quot;item&quot;'&gt; &lt;!-- Blog feed links --&gt;
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+
+  <b:else/> &lt;!--Post feed links --&gt;
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:include cond='data:post.allowComments and data:post.feedLinks' data='post.feedLinks' name='feedLinksBody'/>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+        <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:feedLinksMsg/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+        <b:includable id='iframe_comments' var='post'>
+  &lt;!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. --&gt;
+</b:includable>
+        <b:includable id='mobile-index-post' var='post'>
+  <div class='mobile-date-outer date-outer'>
+    <b:if cond='data:post.dateHeader'>
+      <div class='date-header'>
+        <span><data:post.dateHeader/></span>
+      </div>
+    </b:if>
+
+    <div class='mobile-post-outer'>
+      <a expr:href='data:post.url'>
+        <h3 class='mobile-index-title entry-title' itemprop='name'>
+          <data:post.title/>
+        </h3>
+
+        <div class='mobile-index-arrow'>&amp;rsaquo;</div>
+
+        <div class='mobile-index-contents'>
+          <b:if cond='data:post.thumbnailUrl'>
+            <div class='mobile-index-thumbnail'>
+              <div class='Image'>
+                <img expr:src='data:post.thumbnailUrl'/>
+              </div>
+            </div>
+          </b:if>
+
+          <div class='post-body'>
+            <b:if cond='data:post.snippet'><data:post.snippet/></b:if>
+          </div>
+        </div>
+
+        <div style='clear: both;'/>
+      </a>
+
+      <div class='mobile-index-comment'>
+        &lt;b:include cond='data:blog.pageType != &quot;static_page&quot;                          and data:post.allowComments                          and data:post.numComments != 0' data='post' name='comment_count_picker'/&gt;
+      </div>
+    </div>
+  </div>
+</b:includable>
+        <b:includable id='mobile-main' var='top'>
+    &lt;!-- posts --&gt;
+    <div class='blog-posts hfeed'>
+
+      <b:include data='top' name='status-message'/>
+
+      &lt;b:if cond='data:blog.pageType == &quot;index&quot;'&gt;
+        <b:loop values='data:posts' var='post'>
+          <b:include data='post' name='mobile-index-post'/>
+        </b:loop>
+      <b:else/>
+        <b:loop values='data:posts' var='post'>
+          <b:include data='post' name='mobile-post'/>
+        </b:loop>
+      </b:if>
+    </div>
+
+   <b:include name='mobile-nextprev'/>
+</b:includable>
+        <b:includable id='mobile-nextprev'>
+  <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:newerPageUrl'>
+      <div class='mobile-link-button' id='blog-pager-newer-link'>
+      &lt;a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'&gt;&amp;lsaquo;</a>
+      </div>
+    </b:if>
+
+    <b:if cond='data:olderPageUrl'>
+      <div class='mobile-link-button' id='blog-pager-older-link'>
+      &lt;a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'&gt;&amp;rsaquo;</a>
+      </div>
+    </b:if>
+
+    <div class='mobile-link-button' id='blog-pager-home-link'>
+    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+    </div>
+
+    <div class='mobile-desktop-link'>
+      <a class='home-link' expr:href='data:desktopLinkUrl'><data:desktopLinkMsg/></a>
+    </div>
+
+  </div>
+  <div class='clear'/>
+</b:includable>
+        <b:includable id='mobile-post' var='post'>
+  <div class='date-outer'>
+    <b:if cond='data:post.dateHeader'>
+      <h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+    </b:if>
+    <div class='date-posts'>
+      <div class='post-outer'>
+
+        <div class='post hentry uncustomized-post-template' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+          <b:if cond='data:post.thumbnailUrl'>
+            <meta expr:content='data:post.thumbnailUrl' itemprop='image_url'/>
+          </b:if>
+          <meta expr:content='data:blog.blogId' itemprop='blogId'/>
+          <meta expr:content='data:post.id' itemprop='postId'/>
+
+          <a expr:name='data:post.id'/>
+          <b:if cond='data:post.title'>
+            <h3 class='post-title entry-title' itemprop='name'>
+              <b:if cond='data:post.link'>
+                <a expr:href='data:post.link'><data:post.title/></a>
+              <b:elseif cond='data:post.url and data:blog.url != data:post.url'/>
+                <a expr:href='data:post.url'><data:post.title/></a>
+              <b:else/>
+                <data:post.title/>
+              </b:if>
+            </h3>
+          </b:if>
+
+          <div class='post-header'>
+            <div class='post-header-line-1'/>
+          </div>
+
+          &lt;div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' itemprop='articleBody'&gt;
+            <data:post.body/>
+            <div style='clear: both;'/> &lt;!-- clear for photos floats --&gt;
+          </div>
+
+          <div class='post-footer'>
+            <div class='post-footer-line post-footer-line-1'>
+              <span class='post-author vcard'>
+                <b:if cond='data:top.showAuthor'>
+                  <b:if cond='data:post.authorProfileUrl'>
+                    <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+                      <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
+                      <a expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
+                        <span itemprop='name'><data:post.author/></span>
+                      </a>
+                    </span>
+                  <b:else/>
+                    <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+                      <span itemprop='name'><data:post.author/></span>
+                    </span>
+                  </b:if>
+                </b:if>
+              </span>
+
+              <span class='post-timestamp'>
+                <b:if cond='data:top.showTimestamp'>
+                  <data:top.timestampLabel/>
+                  <b:if cond='data:post.url'>
+                    <meta expr:content='data:post.url.canonical' itemprop='url'/>
+                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
+                  </b:if>
+                </b:if>
+              </span>
+
+              <span class='post-comment-link'>
+                &lt;b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                                  and data:post.allowComments' data='post' name='comment_count_picker'/&gt;
+              </span>
+            </div>
+
+            <div class='post-footer-line post-footer-line-2'>
+              <b:if cond='data:top.showMobileShare'>
+                <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
+                  <a href='javascript:void(0);'><data:shareMsg/></a>
+                </div>
+              </b:if>
+            </div>
+
+          </div>
+        </div>
+
+        &lt;b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/&gt;
+      </div>
+    </div>
+  </div>
+</b:includable>
+        <b:includable id='nextprev'>
+  <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:newerPageUrl'>
+      <span id='blog-pager-newer-link'>
+      &lt;a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'&gt;<data:newerPageTitle/></a>
+      </span>
+    </b:if>
+
+    <b:if cond='data:olderPageUrl'>
+      <span id='blog-pager-older-link'>
+      &lt;a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'&gt;<data:olderPageTitle/></a>
+      </span>
+    </b:if>
+
+    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+
+    <b:if cond='data:mobileLinkUrl'>
+      <div class='blog-mobile-link'>
+        <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a>
+      </div>
+    </b:if>
+
+  </div>
+  <div class='clear'/>
+</b:includable>
+        <b:includable id='post' var='post'>
+  <div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+    <b:if cond='data:post.firstImageUrl'>
+      <meta expr:content='data:post.firstImageUrl' itemprop='image_url'/>
+    </b:if>
+    <meta expr:content='data:blog.blogId' itemprop='blogId'/>
+    <meta expr:content='data:post.id' itemprop='postId'/>
+
+    <a expr:name='data:post.id'/>
+    <b:if cond='data:post.title'>
+      <h3 class='post-title entry-title' itemprop='name'>
+      <b:if cond='data:post.link or (data:post.url and data:blog.url != data:post.url)'>
+        <a expr:href='data:post.link ? data:post.link : data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+      </h3>
+    </b:if>
+
+    <div class='post-header'>
+    <div class='post-header-line-1'/>
+    </div>
+
+    &lt;!-- Then use the post body as the schema.org description, for good G+/FB snippeting. --&gt;
+    &lt;div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'&gt;
+      <data:post.body/>
+      <div style='clear: both;'/> &lt;!-- clear for photos floats --&gt;
+    </div>
+
+    <b:if cond='data:post.hasJumpLink'>
+      <div class='jump-link'>
+        &lt;a expr:href='data:post.url + &quot;#more&quot;' expr:title='data:post.title'&gt;<data:post.jumpText/></a>
+      </div>
+    </b:if>
+
+    <div class='post-footer'>
+    <div class='post-footer-line post-footer-line-1'>
+      <span class='post-author vcard'>
+        <b:if cond='data:top.showAuthor'>
+          <data:top.authorLabel/>
+            <b:if cond='data:post.authorProfileUrl'>
+              <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+                <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
+                <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
+                  <span itemprop='name'><data:post.author/></span>
+                </a>
+              </span>
+            <b:else/>
+              <span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+                <span itemprop='name'><data:post.author/></span>
+              </span>
+            </b:if>
+        </b:if>
+      </span>
+
+      <span class='post-timestamp'>
+        <b:if cond='data:top.showTimestamp'>
+          <data:top.timestampLabel/>
+          <b:if cond='data:post.url'>
+            <meta expr:content='data:post.url.canonical' itemprop='url'/>
+            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></abbr></a>
+          </b:if>
+        </b:if>
+      </span>
+
+      <span class='post-comment-link'>
+        &lt;b:include cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;}                          and data:post.allowComments' data='post' name='comment_count_picker'/&gt;
+      </span>
+
+      <span class='post-icons'>
+        &lt;!-- email post links --&gt;
+        <b:if cond='data:post.emailPostUrl'>
+          <span class='item-action'>
+          <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
+            <img alt='' class='icon-action' height='13' src='https://resources.blogblog.com/img/icon18_email.gif' width='18'/>
+          </a>
+          </span>
+        </b:if>
+
+        &lt;!-- quickedit pencil --&gt;
+        <b:include data='post' name='postQuickEdit'/>
+      </span>
+
+      &lt;!-- share buttons --&gt;
+      <div class='post-share-buttons goog-inline-block'>
+        <b:include cond='data:post.sharePostUrl' data='post' name='shareButtons'/>
+      </div>
+
+      </div>
+
+      <div class='post-footer-line post-footer-line-2'>
+      <span class='post-labels'>
+        <b:if cond='data:top.showPostLabels and data:post.labels'>
+          <data:postLabelsLabel/>
+          <b:loop values='data:post.labels' var='label'>
+            <a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
+          </b:loop>
+        </b:if>
+      </span>
+      </div>
+
+      <div class='post-footer-line post-footer-line-3'>
+      <span class='post-location'>
+        <b:if cond='data:top.showLocation and data:post.location'>
+          <data:postLocationLabel/>
+          <a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
+        </b:if>
+      </span>
+      </div>
+      <b:if cond='data:post.authorAboutMe'>
+        <div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+          <b:if cond='data:post.authorPhoto.url'>
+            <img expr:src='data:post.authorPhoto.url' itemprop='image' width='50px'/>
+          </b:if>
+          <div>
+            <a class='g-profile' expr:href='data:post.authorProfileUrl' itemprop='url' rel='author' title='author profile'>
+              <span itemprop='name'><data:post.author/></span>
+            </a>
+          </div>
+          <span itemprop='description'><data:post.authorAboutMe/></span>
+        </div>
+      </b:if>
+    </div>
+  </div>
+</b:includable>
+        <b:includable id='postQuickEdit' var='post'>
+  <b:if cond='data:post.editUrl'>
+    &lt;span expr:class='&quot;item-control &quot; + data:post.adminClass'&gt;
+      <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
+        <img alt='' class='icon-action' height='18' src='https://resources.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+      </a>
+    </span>
+  </b:if>
+</b:includable>
+        <b:includable id='shareButtons' var='post'>
+  <b:if cond='data:top.showEmailButton'>&lt;a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'&gt;<span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'>&lt;a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'&gt;<span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'>&lt;a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'&gt;<span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'>&lt;a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'&gt;<span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showPinterestButton'>&lt;a class='goog-inline-block share-button sb-pinterest' expr:href='data:post.sharePostUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:top.shareToPinterestMsg' target='_blank'&gt;<span class='share-button-link-text'><data:top.shareToPinterestMsg/></span></a></b:if>
+</b:includable>
+        <b:includable id='status-message'>
+  <b:if cond='data:navMessage'>
+  <div class='status-msg-wrap'>
+    <div class='status-msg-body'>
+      <data:navMessage/>
+    </div>
+    <div class='status-msg-border'>
+      <div class='status-msg-bg'>
+        <div class='status-msg-hidden'><data:navMessage/></div>
+      </div>
+    </div>
+  </div>
+  <div style='clear: both;'/>
+  </b:if>
+</b:includable>
+        <b:includable id='threaded-comment-form' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <b:if cond='data:mobile'>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      &lt;iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/&gt;
+    <b:else/>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      &lt;iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/&gt;
+    </b:if>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe('<data:post.appRpcRelayPath/>');
+    </script>
+  </div>
+</b:includable>
+        <b:includable id='threaded_comment_js' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+
+  <script type='text/javascript'>
+    (function() {
+      var items = <data:post.commentJso/>;
+      var msgs = <data:post.commentMsgs/>;
+      var config = <data:post.commentConfig/>;
+
+&lt;!-- &lt;![CDATA[
+      var cursor = null;
+      if (items &amp;&amp; items.length &gt; 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        var text = (entry &amp;&amp;
+                    ((entry.content &amp;&amp; entry.content.$t) ||
+                     (entry.summary &amp;&amp; entry.summary.$t))) ||
+            '';
+        if (entry &amp;&amp; entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + text + '</span>';
+            }
+          }
+        }
+        return text;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data &amp;&amp; data.feed &amp;&amp; data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author &amp;&amp; entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid &amp;&amp; pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length &lt; 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              &amp;&amp; comment.author.name == config.authorName
+              &amp;&amp; comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/comment/delete/'
+               + config.blogId + '/' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox &amp;&amp; (commentId !== replyParent)) {
+          replybox.src = '';
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog &amp;&amp; window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog &amp;&amp; window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]&gt;
+  </script>
+</b:includable>
+        <b:includable id='threaded_comments' var='post'>
+  <div class='comments' id='comments'>
+    <a name='comments'/>
+    <h4><data:post.commentLabelFull/>:</h4>
+
+    <div class='comments-content'>
+      <b:include cond='data:post.embedCommentForm' data='post' name='threaded_comment_js'/>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threaded-comment-form'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        &lt;iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'&gt;
+        &lt;/iframe&gt;
+      </div>
+    </b:if>
+
+    <div id='backlinks-container'>
+    &lt;div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'&gt;
+    </div>
+    </div>
+  </div>
+</b:includable>
+      </b:widget>
+    </b:section>
+  </div>
+
+  &lt;!-- &#9989; الفوتر 1 (بدون إطار/خلفية &#8594; إعلان) --&gt;
+  <footer>
+    <b:section id='footer1' showaddelement='yes'/>
+  </footer>
+
+  &lt;!-- &#9989; الفوتر 2 (ثلاثة أعمدة) --&gt;
+  <div class='footer2'>
+    <div class='frame-box'><b:section id='footer-col1' showaddelement='yes'>
+  <b:widget id='PageList1' locked='false' title='روابط قد تهمك' type='PageList'>
+    <b:widget-settings>
+      <b:widget-setting name='pageListJson'>&lt;![CDATA[{"882603595195847552":{"href":"https://addonforge.blogspot.com/p/blog-page_49.html","position":1,"title":"اتصل بنا"},"7306757849420861637":{"href":"https://addonforge.blogspot.com/p/blog-page_58.html","position":0,"title":"من نحن"},"6486297122447412147":{"href":"https://addonforge.blogspot.com/p/blog-page_21.html","position":2,"title":"سياسة الخصوصية"}}]]&gt;</b:widget-setting>
+      <b:widget-setting name='homeTitle'>الصفحة الرئيسية</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  &lt;b:if cond='data:title != &quot;&quot;'&gt;<h2><data:title/></h2></b:if>
+  <div class='widget-content'>
+    <b:if cond='data:mobile'>
+      &lt;select expr:id='data:widget.instanceId + &quot;_select&quot;'&gt;
+        <b:if cond='data:showPlaceholder'>
+          &lt;option disabled='disabled' hidden='hidden' value=''&gt;
+            <b:attr cond='!data:hasCurrentPage' name='selected' value='selected'/>
+            <b:message name='messages.moveToPage'/>
+          &lt;/option&gt;
+        </b:if>
+        <b:loop values='data:links' var='link'>
+          &lt;option expr:value='data:link.href'&gt;
+            <b:attr cond='data:link.isCurrentPage' name='selected' value='selected'/>
+            <data:link.title/>
+          &lt;/option&gt;
+        </b:loop>
+      &lt;/select&gt;
+      <span class='pagelist-arrow'>&amp;#9660;</span>
+    <b:else/>
+      <ul>
+        <b:loop values='data:links' var='link'>
+          <li>
+            <b:class cond='data:link.isCurrentPage' name='selected'/>
+            <a expr:href='data:link.href'><data:link.title/></a>
+          </li>
+        </b:loop>
+      </ul>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+</b:section></div>
+    <div class='frame-box'><b:section id='footer-col2' showaddelement='yes'>
+  <b:widget id='Followers1' locked='false' title='الأصدقاء' type='Followers'>
+    <b:widget-settings>
+      <b:widget-setting name='borderColorTransparent'>true</b:widget-setting>
+      <b:widget-setting name='useTemplateDefaultStyles'>true</b:widget-setting>
+      <b:widget-setting name='contentSecondaryTextColor'>#000000</b:widget-setting>
+      <b:widget-setting name='contentHeadlineColor'>#000000</b:widget-setting>
+      <b:widget-setting name='endcapTextColor'>#000000</b:widget-setting>
+      <b:widget-setting name='contentTextColor'>#000000</b:widget-setting>
+      <b:widget-setting name='contentSecondaryLinkColor'>#FFFFFF</b:widget-setting>
+      <b:widget-setting name='endcapLinkColor'>#000000</b:widget-setting>
+      <b:widget-setting name='contentLinkColor'>#000000</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  &lt;b:if cond='data:title != &quot;&quot; and data:codeSnippet != &quot;&quot;'&gt;
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    &lt;div expr:id='data:widget.instanceId + &quot;-wrapper&quot;'&gt;
+      &lt;b:if cond='data:codeSnippet != &quot;&quot;'&gt;
+        <div style='margin-right:2px;'>
+          <data:codeSnippet/>
+        </div>
+      </b:if>
+    </div>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+  </b:widget>
+</b:section></div>
+    <div class='frame-box'><b:section id='footer-col3' showaddelement='yes'>
+  <b:widget id='HTML1' locked='false' title='' type='HTML'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>&lt;![CDATA[<div class="widget-content" style="text-align:center;">
+  جميع الحقوق محفوظة © 
+  <script>
+    document.write(new Date().getFullYear());
+  </script>
+  <a href="https://addonforge.blogspot.com/" target="_blank">AddonForge</a>
+</div>]]&gt;</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  &lt;!-- only display title if it's non-empty --&gt;
+  &lt;b:if cond='data:title != &quot;&quot;'&gt;
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+</b:section></div>
+    <div class='frame-box'><b:section id='footer-col4' showaddelement='yes'>
+  <b:widget id='Stats1' locked='false' title='إجمالي مرات مشاهدة الصفحة' type='Stats'>
+    <b:widget-settings>
+      <b:widget-setting name='showGraphicalCounter'>true</b:widget-setting>
+      <b:widget-setting name='showAnimatedCounter'>true</b:widget-setting>
+      <b:widget-setting name='showSparkline'>true</b:widget-setting>
+      <b:widget-setting name='sparklineStyle'>BLACK_TRANSPARENT</b:widget-setting>
+      <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+  &lt;b:if cond='data:title != &quot;&quot;'&gt;<h2><data:title/></h2></b:if>
+  <div class='widget-content'>
+    &lt;!-- Content is going to be visible when data will be fetched from server. --&gt;
+    &lt;div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'&gt;
+      &lt;!-- Counter and image will be injected later via AJAX call. --&gt;
+      <b:if cond='data:showSparkline'>
+        <script src='https://www.gstatic.com/charts/loader.js' type='text/javascript'/>
+        &lt;span expr:id='data:widget.instanceId + &quot;_sparklinespan&quot;' style='display:inline-block; width:75px; height:30px'/&gt;
+      </b:if>
+      &lt;span expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)' expr:id='data:widget.instanceId + &quot;_totalCount&quot;'&gt;
+      </span>
+      <b:include name='quickedit'/>
+    </div>
+  </div>
+</b:includable>
+  </b:widget>
+  <b:widget id='ReportAbuse1' locked='false' title='' type='ReportAbuse'>
+    <b:includable id='main'>
+  <b:include name='reportAbuse'/>
+</b:includable>
+  </b:widget>
+</b:section></div>
+    <div class='frame-box'><b:section id='footer-col5' showaddelement='yes'>
+  <b:widget id='Profile1' locked='false' title='من أنا' type='Profile'>
+    <b:widget-settings>
+      <b:widget-setting name='showaboutme'>true</b:widget-setting>
+      <b:widget-setting name='showlocation'>true</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+    &lt;b:if cond='data:title != &quot;&quot;'&gt;
+      <h2><data:title/></h2>
+    </b:if>
+    <div class='widget-content'>
+    <b:if cond='data:team'> &lt;!-- team blog profile --&gt;
+      <ul>
+        <b:loop values='data:authors' var='i'>
+          <li>&lt;a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'&gt;<data:i.display-name/></a></li>
+        </b:loop>
+      </ul>
+
+    <b:else/> &lt;!-- normal blog profile --&gt;
+
+      &lt;b:if cond='data:photo.url != &quot;&quot;'&gt;
+        <a expr:href='data:userUrl'><img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/></a>
+      </b:if>
+
+      &lt;dl class='profile-datablock'&gt;
+        &lt;dt class='profile-data'&gt;
+          &lt;a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'&gt;
+            <data:displayname/>
+          </a>
+        &lt;/dt&gt;
+
+        <b:if cond='data:showlocation'>
+          &lt;dd class='profile-data'&gt;<data:location/>&lt;/dd&gt;
+        </b:if>
+
+        &lt;b:if cond='data:aboutme != &quot;&quot;'&gt;&lt;dd class='profile-textblock'&gt;<data:aboutme/>&lt;/dd&gt;</b:if>
+      &lt;/dl&gt;
+      <a class='profile-link' expr:href='data:userUrl' rel='author'><data:viewProfileMsg/></a>
+    </b:if>
+
+     <b:include name='quickedit'/>
+    </div>
+  </b:includable>
+  </b:widget>
+</b:section></div>
+  </div>
+
+</div>
+</body>
+</html>
