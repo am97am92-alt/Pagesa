@@ -1,0 +1,290 @@
+body {
+  display: flex;
+  justify-content: center;
+  background: #222;
+}
+
+.game-container {
+  width: 70vw;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #70c5ce;
+  max-width: 800px;
+  min-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* تحسين الاستجابة للأجهزة المختلفة */
+@media (max-width: 768px) {
+  .game-container {
+    width: 90vw;
+    height: 400px;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    width: 95vw;
+    height: 350px;
+    min-width: 280px;
+  }
+}
+
+.sky {
+  background-image: url('fb-game-background.png');
+  width: 100%;
+  height: 420px;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+/* تحسين الاستجابة للسماء */
+@media (max-width: 768px) {
+  .sky {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sky {
+    height: 270px;
+  }
+}
+
+.ground {
+  background-image: url('bottom-background.png');
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  z-index: 2;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.ground.moving {
+  width: 200%;
+  animation: slideright 2s infinite linear;
+}
+
+.bird {
+  background-image: url('flappy-bird.png');
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  left: 150px;
+  bottom: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  transition: transform 0.1s ease;
+  z-index: 3;
+}
+
+/* تأثيرات بصرية للطائر */
+.bird.jumping {
+  transform: rotate(-15deg);
+}
+
+.bird.falling {
+  transform: rotate(15deg);
+}
+
+/* حركة أجنحة الطائر */
+@keyframes wingFlap {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.8); }
+}
+
+.bird {
+  animation: wingFlap 0.3s ease-in-out infinite;
+}
+
+.bird.jumping {
+  animation: wingFlap 0.2s ease-in-out infinite, jumpRotate 0.1s ease-in-out;
+}
+
+@keyframes jumpRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-15deg); }
+}
+
+/* تحسين الاستجابة للطائر */
+@media (max-width: 768px) {
+  .bird {
+    width: 40px;
+    height: 32px;
+    left: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bird {
+    width: 35px;
+    height: 28px;
+    left: 100px;
+  }
+}
+
+.obstacle, .topObstacle {
+  background-image: url('flappybird-pipe.png');
+  width: 70px !important;
+  min-width: 70px !important;
+  max-width: 70px !important;
+  height: auto;
+  position: absolute;
+  background-size: 70px 100% !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+.topObstacle { 
+  transform: rotate(180deg); 
+}
+
+.score-board {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  z-index: 5;
+}
+
+.ground-container {
+  height: 80px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+/* تم دمج .ground-moving في .ground.moving */
+
+@keyframes slideright {
+  from { transform: translateX(0); }
+  to { transform: translateX(-400px); }
+}
+
+/* شاشة البداية + الجيم اوفر */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+}
+.overlay button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff5722, #e64a19);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+  font-weight: bold;
+}
+
+/* تنسيق خاص لزر إعادة اللعب */
+#restartGameBtn {
+  width: 100% !important;
+  height: 300px !important;
+  font-size: 24px !important;
+  padding: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+}
+
+.overlay button:hover { 
+  background: linear-gradient(135deg, #e64a19, #d84315);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+}
+
+.overlay button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 87, 34, 0.3);
+}
+
+/* تحسين الاستجابة للأزرار */
+@media (max-width: 480px) {
+  .overlay button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  /* تنسيق زر إعادة اللعب للشاشات الصغيرة */
+  #restartGameBtn {
+    height: 200px !important;
+    font-size: 20px !important;
+    padding: 15px !important;
+  }
+}
+
+/* ===== CSS المحسن - إزالة الـ inline styles ===== */
+
+/* أفضل نتيجة */
+.best-score {
+  font-size: 16px;
+  margin: 10px 0;
+  opacity: 0.8;
+}
+
+/* الأزرار الثانوية */
+.secondary-btn {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+
+/* حاوية الإعدادات */
+.settings-container {
+  margin: 20px 0;
+}
+
+/* تسميات الإعدادات */
+.setting-label {
+  display: block;
+  margin: 10px 0;
+}
+
+/* شريط التمرير */
+.slider {
+  margin-right: 10px;
+}
+
+/* مربعات الاختيار */
+.checkbox {
+  margin-right: 10px;
+}

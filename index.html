@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Flappy Bird</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="score-board" id="score">Score: 0</div>
+    <div class="sky">
+      <div class="bird"></div>
+    </div>
+    <div class="ground-container">
+      <div class="ground"></div>
+    </div>
+
+    <!-- شاشة البداية -->
+    <div class="overlay" id="startScreen" role="dialog" aria-labelledby="game-title">
+      <div id="game-title">🐤 Flappy Bird</div>
+      <div id="bestScore" class="best-score" aria-live="polite">Best Score: 0</div>
+      <button id="startGameBtn" aria-describedby="game-title">ابدأ اللعبة</button>
+      <button id="settingsBtn" class="secondary-btn" aria-describedby="game-title">⚙️ إعدادات</button>
+    </div>
+
+    <!-- شاشة Game Over -->
+    <div class="overlay" id="gameOverScreen" style="display:none;" role="dialog" aria-labelledby="final-score">
+      <div id="finalScore" aria-live="assertive">Game Over 😢<br>Score: 0</div>
+      <button id="restartGameBtn" aria-describedby="final-score">🔄 إعادة اللعب</button>
+      <button id="mainMenuBtn" class="secondary-btn" aria-describedby="final-score">🏠 القائمة الرئيسية</button>
+    </div>
+
+    <!-- شاشة الإعدادات -->
+    <div class="overlay" id="settingsScreen" style="display:none;" role="dialog" aria-labelledby="settings-title">
+      <div id="settings-title">⚙️ الإعدادات</div>
+      <div class="settings-container">
+        <label class="setting-label" for="difficultySlider">
+          <input type="range" id="difficultySlider" min="1" max="3" value="2" class="slider" aria-label="مستوى الصعوبة">
+          الصعوبة: <span id="difficultyText" aria-live="polite">متوسطة</span>
+        </label>
+        <label class="setting-label" for="soundToggle">
+          <input type="checkbox" id="soundToggle" checked class="checkbox" aria-label="تشغيل الأصوات">
+          الأصوات
+        </label>
+        <label class="setting-label" for="effectsToggle">
+          <input type="checkbox" id="effectsToggle" checked class="checkbox" aria-label="التأثيرات البصرية">
+          التأثيرات البصرية
+        </label>
+      </div>
+      <button id="saveSettingsBtn" aria-describedby="settings-title">💾 حفظ</button>
+      <button id="backBtn" class="secondary-btn" aria-describedby="settings-title">🔙 رجوع</button>
+    </div>
+  </div>
+
+        <script src="app.js"></script>
+</body>
+</html>
